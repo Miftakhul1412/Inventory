@@ -8,16 +8,16 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/welcome"
+        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:gravity="center"
-        android:padding="10dp"
         android:text="Selamat Datang"
-        android:textColor="@android:color/black"
+        android:textStyle="bold"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:id="@+id/welcome"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -29,13 +29,13 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/sila"
-        android:src="@drawable/ic_logo_inventory">
+        android:src="@mipmap/ic_logo_splash">
 
     </ImageView>
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_centerInParent="true"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
@@ -84,6 +84,6 @@
                 android:text="Sign In" />
         </LinearLayout>
 
-    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
