@@ -6,12 +6,12 @@
     android:padding="10dp"
     tools:context=".adapter.AdapterBarang">
 
-   <ImageView
-       android:layout_width="100dp"
-       android:layout_height="100dp"
-       android:id="@+id/gambarBarang"
-       android:src="@mipmap/ic_logo_splash"
-       android:scaleType="centerCrop"/>
+    <ImageView
+        android:id="@+id/gambarBarang"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_logo_inventory" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
