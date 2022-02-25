@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/btn_login"
+    android:background="@drawable/bg_login"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="Selamat Datang"
         android:textStyle="bold"
         android:textSize="30sp"
         android:textColor="@android:color/black"
@@ -22,9 +22,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buy Everything you want"
+        android:text="Silahkan Log in..."
+        android:id="@+id/sila"
         android:layout_below="@id/welcome"
         android:gravity="center"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_logo_splash"
+        android:layout_below="@id/sila"
+        >
+    </ImageView>
 
     <androidx.cardview.widget.CardView
         android:layout_centerInParent="true"
@@ -71,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/btn_login"
                 android:text="Sign In" />
         </LinearLayout>
 

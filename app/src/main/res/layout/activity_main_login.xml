@@ -11,7 +11,7 @@
         android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="Selamat Datang"
         android:textStyle="bold"
         android:textSize="30sp"
         android:textColor="@android:color/black"
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buy Everything you want"
+        android:text="Silahkan Log in..."
         android:layout_below="@id/welcome"
         android:gravity="center"/>
 
