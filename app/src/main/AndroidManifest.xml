@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_logo_splash_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Inventory">
-        <activity
-            android:name=".MainLihatBarangActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainLogin"
             android:exported="false" />
