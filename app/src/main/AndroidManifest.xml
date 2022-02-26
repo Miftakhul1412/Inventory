@@ -12,19 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Inventory">
         <activity
+            android:name=".MainLihatBarangActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainLogin"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
-            android:theme="@style/NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainTambahStokActivity"
             android:exported="false" />
@@ -36,9 +38,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
