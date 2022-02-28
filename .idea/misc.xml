@@ -15,8 +15,9 @@
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/drawable/ic_orang_foreground.xml" value="0.1915" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_main_login.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_main_menu.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_main_menu.xml" value="0.33" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_barang.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_stok.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_splash_screen.xml" value="0.1925925925925926" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_barang.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_stok.xml" value="0.20416666666666666" />
@@ -34,14 +35,12 @@
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/drawable/ic_orang_foreground.xml" value="0.2075" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/drawable/ic_screen_foreground.xml" value="0.1255" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_lihat_barang.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_menu.xml" value="0.22" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_barang.xml" value="0.13269927536231885" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_stok.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/dashboard.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/fragment_list_barang_adapter.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/item_adapter_barang.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/item_adapter_stok.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
