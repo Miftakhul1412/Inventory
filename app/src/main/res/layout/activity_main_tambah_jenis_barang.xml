@@ -8,6 +8,17 @@
     android:orientation="vertical"
     tools:context=".MainTambahJenisBarangActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="TAMBAH JENIS BARANG"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
@@ -34,5 +45,21 @@
             android:layout_height="match_parent"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/simpanData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFC107"
+        android:textColor="@color/black"
+        android:text="Simpan Data" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rvJenis"
+        android:layout_marginTop="10dp"/>
 
   </LinearLayout>

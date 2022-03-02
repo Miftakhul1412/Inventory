@@ -25,5 +25,10 @@ class MainMenuActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+            binding.tambahJenis.setOnClickListener {
+                Intent(this@MainMenuActivity, MainTambahJenisBarangActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
     }
 }
