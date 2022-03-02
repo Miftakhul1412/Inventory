@@ -36,10 +36,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Barang">
+        android:hint="Kode Stok">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/NamaBarang"
+            android:id="@+id/kodeStok"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="text" />

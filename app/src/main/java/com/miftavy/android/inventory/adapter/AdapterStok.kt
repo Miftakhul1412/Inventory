@@ -5,20 +5,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.miftavy.android.inventory.databinding.ItemAdapterBarangBinding
 import com.miftavy.android.inventory.databinding.ItemAdapterStokBinding
+import com.miftavy.android.inventory.model.DataStokItem
 
 //class AdapterStok : RecyclerView.Adapter<AdapterStok.ViewHoler>() {
-class AdapterStok(private val clickItem: (Stok) -> Unit) : RecyclerView.Adapter<AdapterStok.ViewHolder>() {
+class AdapterStok(private val clickItem: (DataStokItem) -> Unit) : RecyclerView.Adapter<AdapterStok.ViewHolder>() {
 
     //memanggil class utama yaitu class adapterbarang
 
     inner class ViewHolder(private val binding: ItemAdapterStokBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItem(stok: Stok) {
-            binding.kodeBarang.text = stok.kode
-            binding.NamaBarang.text = stok.barang
-            binding.batasMin.text = stok.batasMin
-            binding.stok.text = stok.stok
+        fun bindItem(stok: DataStokItem) {
+            binding.kodeBarang.text = stok.kodeBarang
+//            binding.kodeStok.text = stok.kodeStok
+            binding.batasMin.text = stok.batasMin.toString()
+            binding.stok.text = stok.stok.toString()
 
             //inti klik untuk masing-masing baris ke recyclerview nya
             binding.root.setOnClickListener {
@@ -42,9 +43,9 @@ class AdapterStok(private val clickItem: (Stok) -> Unit) : RecyclerView.Adapter<
         return listStok.size
     }
     //mutablelist adalah array
-    private var listStok = mutableListOf<Stok>()
+    private var listStok = mutableListOf<DataStokItem>()
 
-    fun  addItem(list: MutableList<Stok>, clearAll: Boolean = false){
+    fun  addItem(list: MutableList<DataStokItem>, clearAll: Boolean = false){
         if (clearAll)
             listStok = mutableListOf()
 

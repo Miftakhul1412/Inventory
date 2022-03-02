@@ -56,4 +56,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
     //android browser aka custum tabs chrome
     implementation 'androidx.browser:browser:1.4.0'
+
+    //
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
 }

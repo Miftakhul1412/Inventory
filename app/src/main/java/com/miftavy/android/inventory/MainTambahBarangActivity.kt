@@ -39,7 +39,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
 
         //adapterBarang = AdapterBarang()
         adapterBarang = AdapterBarang{
-            Toast.makeText(this, it.barang, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it.namaBarang, Toast.LENGTH_SHORT).show()
         }
         binding.rvBarang.apply {
             adapter = adapterBarang

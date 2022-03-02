@@ -4,19 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.miftavy.android.inventory.databinding.ItemAdapterBarangBinding
+import com.miftavy.android.inventory.model.DataBarangItem
 
 //class AdapterBarang : RecyclerView.Adapter<AdapterBarang.ViewHolder>(){
-class AdapterBarang(private val clickItem: (Barang) -> Unit) : RecyclerView.Adapter<AdapterBarang.ViewHolder>() {
+class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : RecyclerView.Adapter<AdapterBarang.ViewHolder>() {
 
     //memanggil class utama yaitu class adapterbarang
 
     inner class  ViewHolder(private  val binding: ItemAdapterBarangBinding) :
         RecyclerView.ViewHolder(binding.root){
 
-            fun bindItem(barang: Barang){
-                binding.NamaBarang.text = barang.barang
-                binding.harga.text = barang.harga
-                binding.jenis.text = barang.jenis
+            fun bindItem(barang: DataBarangItem?){
+                binding.NamaBarang.text = barang?.namaBarang
+                binding.harga.text = barang?.hargaBeli.toString()
+                binding.jenis.text = barang?.jenisBarang
 
                 //inti klik untuk masing-masing baris ke recyclerview nya
                 binding.root.setOnClickListener{
@@ -34,7 +35,7 @@ class AdapterBarang(private val clickItem: (Barang) -> Unit) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(listBarang.get(position))
+        holder.bindItem(listBarang?.get(position))
     }
 
     override fun getItemCount(): Int {
@@ -42,9 +43,9 @@ class AdapterBarang(private val clickItem: (Barang) -> Unit) : RecyclerView.Adap
     }
 
     //mutablelist adalah array
-    private var listBarang = mutableListOf<Barang>()
+    private var listBarang = mutableListOf<DataBarangItem?>()
 
-    fun  addItem(list: MutableList<Barang>, clearAll: Boolean = false){
+    fun  addItem(list: List<DataBarangItem?>, clearAll: Boolean = false){
         if (clearAll)
             listBarang = mutableListOf()
 

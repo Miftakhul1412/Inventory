@@ -32,11 +32,11 @@ class MainTambahStokActivity : AppCompatActivity() {
         binding.simpanData.setOnClickListener{
             //ambil inputan text edit text
             val kodeBarang = binding.kodeBarang.text.toString()
-            val namaBarang = binding.NamaBarang.text.toString()
+            val kodeStok = binding.kodeStok.text.toString()
             val batasMin = binding.batasMin.text.toString()
             val stokBarang = binding.stok.text.toString()
 
-            val StokModel = Stok(kode = kodeBarang, barang = namaBarang, batasMin = batasMin, stok = stokBarang)
+            val StokModel = Stok(kode = kodeBarang, kodeStok = kodeStok, batasMin = batasMin, stok = stokBarang)
             val listStokModel = mutableListOf<Stok>()
             listStokModel.add(StokModel)
 
