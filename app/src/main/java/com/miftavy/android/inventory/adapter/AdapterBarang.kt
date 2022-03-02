@@ -15,9 +15,10 @@ class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : Recycler
         RecyclerView.ViewHolder(binding.root){
 
             fun bindItem(barang: DataBarangItem?){
-                binding.NamaBarang.text = barang?.namaBarang
-                binding.harga.text = barang?.hargaBeli.toString()
-                binding.jenis.text = barang?.jenisBarang
+                binding.kodeBarang.text = barang?.kodeBarang
+                binding.namaBarang.text = barang?.namaBarang
+                binding.hargaBeli.text = barang?.hargaBeli.toString()
+                binding.jenisBarang.text = barang?.jenisBarang
 
                 //inti klik untuk masing-masing baris ke recyclerview nya
                 binding.root.setOnClickListener{

@@ -16,7 +16,7 @@ class AdapterJenis(private val clickItem: (Jenis) -> Unit) : RecyclerView.Adapte
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindItem(jenis: Jenis) {
-            binding.idJenis.text = jenis.idJenis
+            binding.idJenis.text = jenis.idJenis.toString()
             binding.jenisBarang.text = jenis.jenisBarang
 
             //inti klik untuk masing-masing baris ke recyclerview nya

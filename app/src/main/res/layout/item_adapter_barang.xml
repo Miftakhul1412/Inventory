@@ -18,7 +18,7 @@
             android:scaleType="center" />
 
         <TextView
-            android:id="@+id/nama_barang"
+            android:id="@+id/namaBarang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -33,7 +33,7 @@
             android:id="@+id/tanggal_masuk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nama_barang"
+            android:layout_below="@+id/namaBarang"
             android:layout_alignParentEnd="true"
             android:layout_toStartOf="@id/gambar"
             android:layout_toEndOf="@+id/gambar"

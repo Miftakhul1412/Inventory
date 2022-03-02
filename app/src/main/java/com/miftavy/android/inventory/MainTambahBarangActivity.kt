@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.AdapterBarang
 import com.miftavy.android.inventory.adapter.Barang
 import com.miftavy.android.inventory.databinding.ActivityMainTambahBarangBinding
+import com.miftavy.android.inventory.model.DataBarangItem
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import java.util.*
 
@@ -50,19 +51,20 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         // kasih klik untuk tombol simpannya
         binding.simpanData.setOnClickListener{
             //ambil inputan text edit text
-            val namaBarang = binding.Namabarang.text.toString()
-            val hargaBarang = binding.harga.text.toString()
+            val kodeBarang = binding.kodeBarang.text.toString()
+            val namaBarang = binding.namaBarang.text.toString()
+            val hargaBeli = binding.hargaBeli.text.toString()
             val jenisBarang = binding.dropdownJenisBarang.selectedItem.toString()
 
-            val barangModel = Barang(barang = namaBarang, harga = hargaBarang, jenis = jenisBarang)
-            val listBarangModel = mutableListOf<Barang>()
+            val barangModel = DataBarangItem(kodeBarang = kodeBarang, namaBarang = namaBarang, hargaBeli = hargaBeli, jenisBarang = jenisBarang)
+            val listBarangModel = mutableListOf<DataBarangItem?>()
             listBarangModel.add(barangModel)
 
             adapterBarang.addItem(listBarangModel)
         }
     }
     fun addJenisBarang(){
-        val jenis = mutableListOf("Elektronik", "Berkas")
+        val jenis = mutableListOf<DataBarangItem?>()
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, jenis)
 

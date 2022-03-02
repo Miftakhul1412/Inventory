@@ -20,45 +20,44 @@
         android:textStyle="bold" />
 
 
-
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:hint="Kode Barang">
+        android:hint="Kode Barang"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/kodeBarang"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Kodebarang"
-            android:inputType="text"/>
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:hint="Nama Barang">
+        android:hint="Nama Barang"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/namaBarang"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Namabarang"
-            android:inputType="text"/>
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:hint="Harga Beli">
+        android:hint="Harga Beli"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/harga"
+            android:id="@+id/hargaBeli"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="number" />
@@ -66,16 +65,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Jenis Barang"/>
-
-    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Jenis Barang" />
+
+    <Spinner
         android:id="@+id/dropdownJenisBarang"
-        android:layout_marginTop="4dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -83,9 +82,9 @@
         android:text="Tanggal Masuk\t:" />
 
     <TextView
+        android:id="@+id/datePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/datePicker"
         android:paddingVertical="8dp"
         android:text="Pilih Tanggal" />
 
@@ -106,13 +105,13 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
         android:backgroundTint="#FFC107"
-        android:textColor="@color/black"
-        android:text="Simpan Data" />
+        android:text="Simpan Data"
+        android:textColor="@color/black" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBarang"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rvBarang"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

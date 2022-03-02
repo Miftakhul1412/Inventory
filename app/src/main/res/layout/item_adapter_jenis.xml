@@ -10,20 +10,20 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/id_jenis_barang"
+            android:id="@+id/idJenis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
-            android:id="@+id/jenis_barang"
+            android:id="@+id/jenisBarang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/id_jenis_barang"
+            android:layout_below="@+id/idJenis"
             android:layout_alignParentEnd="true"
-            android:layout_toStartOf="@id/id_jenis_barang"
-            android:layout_toEndOf="@+id/id_jenis_barang"
+            android:layout_toStartOf="@id/idJenis"
+            android:layout_toEndOf="@+id/idJenis"
             android:paddingHorizontal="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
     </RelativeLayout>

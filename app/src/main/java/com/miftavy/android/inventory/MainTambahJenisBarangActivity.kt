@@ -35,6 +35,7 @@ class MainTambahJenisBarangActivity : AppCompatActivity() {
             //ambil inputan text edit text
             val idjenis = binding.idJenis.text.toString()
             val jenisBarang = binding.jenisBarang.text.toString()
+
             val JenisModel = Jenis(idJenis = idjenis, jenisBarang = jenisBarang)
             val listJenisBarangModel = mutableListOf<Jenis>()
             listJenisBarangModel.add(JenisModel)
