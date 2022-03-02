@@ -6,40 +6,27 @@
     tools:context=".MainTambahStokActivity">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="10dp">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/kodeStok"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:id="@+id/kodeBarang"
-            android:text="@string/app_name"
-            android:textSize="16sp"/>
+            android:padding="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/stok"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/NamaBarang"
-            android:text="@string/app_name"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:id="@+id/batasMin" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:id="@+id/stok" />
-
-
-    </LinearLayout>
+            android:layout_below="@+id/kodeStok"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/kodeStok"
+            android:layout_toEndOf="@+id/kodeStok"
+            android:paddingHorizontal="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </RelativeLayout>
 
 </RelativeLayout>
