@@ -162,13 +162,14 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         android:orientation="vertical">
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/logo"
-        android:padding="10dp"
-        android:src="@drawable/ic_logo_inventory" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_logo_inventory" />
 
     <TextView
         android:layout_width="match_parent"
@@ -177,8 +178,7 @@
         android:textColor="@color/black"
         android:layout_below="@id/logo"
         android:gravity="center"
-        android:textSize="12sp"
-        >
+        android:textSize="12sp">
     </TextView>
 
 

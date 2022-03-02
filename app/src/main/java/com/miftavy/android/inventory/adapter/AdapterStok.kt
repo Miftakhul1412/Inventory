@@ -15,7 +15,9 @@ class AdapterStok(private val clickItem: (Stok) -> Unit) : RecyclerView.Adapter<
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindItem(stok: Stok) {
+            binding.kodeBarang.text = stok.kode
             binding.NamaBarang.text = stok.barang
+            binding.batasMin.text = stok.batasMin
             binding.stok.text = stok.stok
 
             //inti klik untuk masing-masing baris ke recyclerview nya
@@ -53,6 +55,8 @@ class AdapterStok(private val clickItem: (Stok) -> Unit) : RecyclerView.Adapter<
     }
 }
 data class Stok(
+    val kode: String? = null,
     val barang: String? = null,
+    val batasMin: String? = null,
     val stok: String? = null
 )

@@ -30,10 +30,12 @@ class MainTambahStokActivity : AppCompatActivity() {
 // kasih klik untuk tombol simpannya
         binding.simpanData.setOnClickListener{
             //ambil inputan text edit text
+            val kodeBarang = binding.kodeBarang.text.toString()
             val namaBarang = binding.NamaBarang.text.toString()
+            val batasMin = binding.batasMin.text.toString()
             val stokBarang = binding.stok.text.toString()
 
-            val StokModel = Stok(barang = namaBarang, stok = stokBarang)
+            val StokModel = Stok(kode = kodeBarang, barang = namaBarang, batasMin = batasMin, stok = stokBarang)
             val listStokModel = mutableListOf<Stok>()
             listStokModel.add(StokModel)
 
