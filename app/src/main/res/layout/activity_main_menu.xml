@@ -7,22 +7,30 @@
     android:orientation="vertical"
     tools:context=".MainMenuActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFEB3B"
         android:gravity="center"
-        android:padding="20dp"
-        android:text="MAIN MENU"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_gravity="center"
-        android:textColor="@color/black"/>
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#ffff00"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="INVENTARIS LAUWBA"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -179,7 +187,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_baseline_add_box_24">
+                    android:src="@drawable/ic_jenis_barang">
 
                 </ImageView>
 
@@ -208,7 +216,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_baseline_assignment_24">
+                    android:src="@drawable/ic_lihat_jenis">
 
                 </ImageView>
 
@@ -222,31 +230,6 @@
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="100dp"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerInParent="true"
-            android:padding="10dp"
-            android:src="@drawable/ic_logo_inventory" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="INVENTORI LAUWBA"
-        android:textColor="@color/black"
-        android:gravity="left"
-        android:textSize="12sp">
-    </TextView>
-
-
-</LinearLayout>
 
 </LinearLayout>

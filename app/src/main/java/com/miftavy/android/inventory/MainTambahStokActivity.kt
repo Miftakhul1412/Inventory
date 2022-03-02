@@ -8,6 +8,7 @@ import com.miftavy.android.inventory.adapter.AdapterStok
 import com.miftavy.android.inventory.adapter.Stok
 import com.miftavy.android.inventory.databinding.ActivityMainTambahStokBinding
 
+
 class MainTambahStokActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainTambahStokBinding
     private  lateinit var adapterStok: AdapterStok
