@@ -82,13 +82,12 @@
         android:layout_height="wrap_content"
         android:text="Tanggal Masuk\t:" />
 
-    <DatePicker
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="17dp"
-        android:layout_marginHorizontal="17dp">
-
-    </DatePicker>
+        android:id="@+id/datePicker"
+        android:paddingVertical="8dp"
+        android:text="Pilih Tanggal" />
 
 
     <Button
