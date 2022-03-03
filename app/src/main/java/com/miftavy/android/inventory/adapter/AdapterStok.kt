@@ -44,7 +44,7 @@ class AdapterStok(private val clickItem: (DataStokItem?) -> Unit) : RecyclerView
     //mutablelist adalah array
     private var listStok = mutableListOf<DataStokItem?>()
 
-    fun  addItem(list: MutableList<DataStokItem?>, clearAll: Boolean = false){
+    fun  addItem(list: List<DataStokItem?>, clearAll: Boolean = false){
         if (clearAll)
             listStok = mutableListOf()
 
