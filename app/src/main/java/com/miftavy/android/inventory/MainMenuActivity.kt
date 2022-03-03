@@ -30,5 +30,11 @@ class MainMenuActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+            binding.lihatbarang.setOnClickListener {
+                Intent(this@MainMenuActivity, ListBarangActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
+
     }
 }
