@@ -3,8 +3,10 @@ package com.miftavy.android.inventory.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.miftavy.android.inventory.databinding.ItemAdapterBarangBinding
 import com.miftavy.android.inventory.model.DataBarangItem
+import com.miftavy.android.inventory.network.Network
 
 //class AdapterBarang : RecyclerView.Adapter<AdapterBarang.ViewHolder>(){
 class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : RecyclerView.Adapter<AdapterBarang.ViewHolder>() {
@@ -16,6 +18,9 @@ class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : Recycler
 
             fun bindItem(barang: DataBarangItem?){
                 binding.namaBarang.text = barang?.namaBarang
+                Glide.with(binding.root.context)
+                    .load("${Network().BASE_URL}${barang?.gambar}")
+                    .into(binding.gambar)
 
                 //inti klik untuk masing-masing baris ke recyclerview nya
                 binding.root.setOnClickListener{

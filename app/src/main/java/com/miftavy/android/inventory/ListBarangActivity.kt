@@ -17,6 +17,7 @@ class ListBarangActivity : AppCompatActivity(){
     private lateinit var adapterBarang : AdapterBarang
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityListBarangBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //initialize adapter barang
