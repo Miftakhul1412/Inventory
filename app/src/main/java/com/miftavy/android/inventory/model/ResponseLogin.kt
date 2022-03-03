@@ -1,4 +1,4 @@
-package com.miftavy.android.inventory
+package com.miftavy.android.inventory.model
 
 import com.google.gson.annotations.SerializedName
 

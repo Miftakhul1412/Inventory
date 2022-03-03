@@ -1,6 +1,6 @@
 package com.miftavy.android.inventory.network
 
-import com.miftavy.android.inventory.ResponseLogin
+import com.miftavy.android.inventory.model.ResponseLogin
 import com.miftavy.android.inventory.input.InputLogin
 import com.miftavy.android.inventory.model.ResponseListBarang
 import com.miftavy.android.inventory.model.ResponseListJenis
