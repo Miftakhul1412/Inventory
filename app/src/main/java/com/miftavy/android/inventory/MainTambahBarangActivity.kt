@@ -40,7 +40,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
 
         //adapterBarang = AdapterBarang()
         adapterBarang = AdapterBarang{
-            Toast.makeText(this, it.namaBarang, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it?.namaBarang, Toast.LENGTH_SHORT).show()
         }
         binding.rvBarang.apply {
             adapter = adapterBarang
@@ -56,7 +56,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             val hargaBeli = binding.hargaBeli.text.toString()
             val jenisBarang = binding.dropdownJenisBarang.selectedItem.toString()
 
-            val barangModel = DataBarangItem(kodeBarang = kodeBarang, namaBarang = namaBarang, hargaBeli = hargaBeli, jenisBarang = jenisBarang)
+            val barangModel = DataBarangItem(kodeBarang = kodeBarang, namaBarang = namaBarang, hargaBeli = hargaBeli.toInt(), jenisBarang = jenisBarang)
             val listBarangModel = mutableListOf<DataBarangItem?>()
             listBarangModel.add(barangModel)
 

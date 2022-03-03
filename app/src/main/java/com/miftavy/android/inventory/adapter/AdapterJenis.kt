@@ -7,17 +7,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.miftavy.android.inventory.databinding.ItemAdapterJenisBinding
 import com.miftavy.android.inventory.databinding.ItemAdapterStokBinding
+import com.miftavy.android.inventory.model.DataJenisItem
 
-class AdapterJenis(private val clickItem: (Jenis) -> Unit) : RecyclerView.Adapter<AdapterJenis.ViewHolder>() {
+class AdapterJenis(private val clickItem: (DataJenisItem?) -> Unit) : RecyclerView.Adapter<AdapterJenis.ViewHolder>() {
 
     //memanggil class utama yaitu class adapterbarang
 
     inner class ViewHolder(private val binding: ItemAdapterJenisBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItem(jenis: Jenis) {
-            binding.idJenis.text = jenis.idJenis.toString()
-            binding.jenisBarang.text = jenis.jenisBarang
+        fun bindItem(jenis: DataJenisItem?) {
+            binding.idJenisBarang.text = jenis?.idJenisBarang.toString()
+            binding.jenisBarang.text = jenis?.jenisBarang
 
             //inti klik untuk masing-masing baris ke recyclerview nya
             binding.root.setOnClickListener {
@@ -34,16 +35,16 @@ class AdapterJenis(private val clickItem: (Jenis) -> Unit) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(listJenis.get(position))
+        holder.bindItem(listJenis?.get(position))
     }
 
     override fun getItemCount(): Int {
         return listJenis.size
     }
     //mutablelist adalah array
-    private var listJenis = mutableListOf<Jenis>()
+    private var listJenis = mutableListOf<DataJenisItem?>()
 
-    fun  addItem(list: MutableList<Jenis>, clearAll: Boolean = false){
+    fun  addItem(list: MutableList<DataJenisItem?>, clearAll: Boolean = false){
         if (clearAll)
             listJenis = mutableListOf()
 
@@ -53,7 +54,3 @@ class AdapterJenis(private val clickItem: (Jenis) -> Unit) : RecyclerView.Adapte
         notifyDataSetChanged()
     }
 }
-data class Jenis(
-    val idJenis: String? = null,
-    val jenisBarang: String? = null
-)

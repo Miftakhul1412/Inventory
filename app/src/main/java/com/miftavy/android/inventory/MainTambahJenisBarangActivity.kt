@@ -10,6 +10,7 @@ import com.miftavy.android.inventory.adapter.*
 import com.miftavy.android.inventory.databinding.ActivityMainTambahBarangBinding
 import com.miftavy.android.inventory.databinding.ActivityMainTambahJenisBarangBinding
 import com.miftavy.android.inventory.databinding.ActivityMainTambahStokBinding
+import com.miftavy.android.inventory.model.DataJenisItem
 
 class MainTambahJenisBarangActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainTambahJenisBarangBinding
@@ -24,7 +25,7 @@ class MainTambahJenisBarangActivity : AppCompatActivity() {
 
         //adapterBarang = AdapterBarang()
         adapterJenis = AdapterJenis{
-            Toast.makeText(this, it.jenisBarang, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it?.jenisBarang, Toast.LENGTH_SHORT).show()
         }
         binding.rvJenis.apply {
             adapter = adapterJenis
@@ -33,11 +34,11 @@ class MainTambahJenisBarangActivity : AppCompatActivity() {
 // kasih klik untuk tombol simpannya
         binding.simpanData.setOnClickListener{
             //ambil inputan text edit text
-            val idjenis = binding.idJenis.text.toString()
+            val idJenisBarang = binding.idJenisBarang.text.toString()
             val jenisBarang = binding.jenisBarang.text.toString()
 
-            val JenisModel = Jenis(idJenis = idjenis, jenisBarang = jenisBarang)
-            val listJenisBarangModel = mutableListOf<Jenis>()
+            val JenisModel = DataJenisItem(idJenisBarang = idJenisBarang.toInt(), jenisBarang = jenisBarang)
+            val listJenisBarangModel = mutableListOf<DataJenisItem?>()
             listJenisBarangModel.add(JenisModel)
 
             adapterJenis.addItem(listJenisBarangModel)

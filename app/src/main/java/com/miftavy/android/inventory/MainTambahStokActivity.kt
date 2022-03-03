@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.AdapterStok
-import com.miftavy.android.inventory.adapter.Stok
 import com.miftavy.android.inventory.databinding.ActivityMainTambahStokBinding
+import com.miftavy.android.inventory.model.DataStokItem
 
 
 class MainTambahStokActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class MainTambahStokActivity : AppCompatActivity() {
 
         //adapterBarang = AdapterBarang()
         adapterStok = AdapterStok{
-            Toast.makeText(this, it.stok, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it?.kodeBarang, Toast.LENGTH_SHORT).show()
         }
         binding.rvStok.apply {
             adapter = adapterStok
@@ -34,10 +34,10 @@ class MainTambahStokActivity : AppCompatActivity() {
             val kodeBarang = binding.kodeBarang.text.toString()
             val kodeStok = binding.kodeStok.text.toString()
             val batasMin = binding.batasMin.text.toString()
-            val stokBarang = binding.stok.text.toString()
+            val stok = binding.stok.text.toString()
 
-            val StokModel = Stok(kode = kodeBarang, kodeStok = kodeStok, batasMin = batasMin, stok = stokBarang)
-            val listStokModel = mutableListOf<Stok>()
+            val StokModel = DataStokItem(kodeBarang = kodeBarang, kodeStok = kodeStok.toInt(), batasMin = batasMin.toInt(), stok = stok.toInt())
+            val listStokModel = mutableListOf<DataStokItem?>()
             listStokModel.add(StokModel)
 
             adapterStok.addItem(listStokModel)

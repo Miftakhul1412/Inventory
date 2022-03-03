@@ -14,7 +14,7 @@ data class DataBarangItem(
 	val updatedAt: String? = null,
 
 	@field:SerializedName("kode_barang")
-	val kodeBarang: Int? = null,
+	val kodeBarang: String? = null,
 
 	@field:SerializedName("harga_beli")
 	val hargaBeli: Int? = null,
