@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class Network {
-    val BASE_URL: String = "http://192.168.217.69/laravel-inventaris/public/"
+    val BASE_URL: String = "http://192.168.43.99/laravel-inventaris/public/"
     private fun setOkHttp(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor().setLevel(
             HttpLoggingInterceptor.Level.BASIC

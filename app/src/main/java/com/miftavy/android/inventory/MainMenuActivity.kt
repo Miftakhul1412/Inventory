@@ -36,5 +36,15 @@ class MainMenuActivity : AppCompatActivity() {
                 }
             }
 
+            binding.lihatStok.setOnClickListener {
+                Intent(this@MainMenuActivity, ListStokActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
+            binding.lihatjenis.setOnClickListener {
+                Intent(this@MainMenuActivity, ListJenisActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
     }
 }
