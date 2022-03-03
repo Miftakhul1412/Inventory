@@ -14,11 +14,14 @@ interface ApiServices {
     @GET("webservices/listjenis/{id_jenis_barang}")
     fun getDetailNews(@Path("id_jenis_barang") id_jenis_barang: String?): retrofit2.Call<ResponseListJenis>
 
-    @GET("webservices/liststok")
-    fun searchNews(@Query("q") terms: String?): retrofit2.Call<ResponseListStok>
+    @GET("webservice/liststok")
+    suspend fun getListStok() : ResponseListStok
+
 
     @GET("webservice/listbarang")
     suspend fun getListBarang() : ResponseListBarang
 
+    @GET("webservice/listjenis")
+    suspend fun  getListJenis() : ResponseListJenis
 
 }
