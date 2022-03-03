@@ -44,7 +44,7 @@ class AdapterJenis(private val clickItem: (DataJenisItem?) -> Unit) : RecyclerVi
     //mutablelist adalah array
     private var listJenis = mutableListOf<DataJenisItem?>()
 
-    fun  addItem(list: MutableList<DataJenisItem?>, clearAll: Boolean = false){
+    fun  addItem(list: List<DataJenisItem?>, clearAll: Boolean = false){
         if (clearAll)
             listJenis = mutableListOf()
 

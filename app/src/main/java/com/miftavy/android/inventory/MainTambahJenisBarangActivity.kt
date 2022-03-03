@@ -1,15 +1,11 @@
 package com.miftavy.android.inventory
 
-import android.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.*
-import com.miftavy.android.inventory.databinding.ActivityMainTambahBarangBinding
 import com.miftavy.android.inventory.databinding.ActivityMainTambahJenisBarangBinding
-import com.miftavy.android.inventory.databinding.ActivityMainTambahStokBinding
 import com.miftavy.android.inventory.model.DataJenisItem
 
 class MainTambahJenisBarangActivity : AppCompatActivity() {

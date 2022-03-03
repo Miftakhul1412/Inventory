@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#FF9800"
+        android:backgroundTint="#FFC107"
         android:text="Simpan Data"
         android:textColor="@color/black" />
 

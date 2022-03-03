@@ -58,8 +58,3 @@ class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : Recycler
         notifyDataSetChanged()
     }
 }
-data class Barang(
-    val barang: String? = null,
-    val harga: String? = null,
-    val jenis: String? = null
-)

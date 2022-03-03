@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.miftavy.android.inventory" >
+    package="com.miftavy.android.inventory">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,8 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_logo_splash_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Inventory" >
+        android:theme="@style/Theme.Inventory"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ListJenisActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".MainTambahJenisBarangActivity"
             android:exported="false" />
@@ -21,7 +30,7 @@
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/NoActionBar" >
+            android:theme="@style/NoActionBar">
 
         </activity>
         <activity
@@ -36,13 +45,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity android:name=".ListBarangActivity"
+        <activity
+            android:name=".ListBarangActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

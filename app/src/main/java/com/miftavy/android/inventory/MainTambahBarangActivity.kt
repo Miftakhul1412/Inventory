@@ -7,7 +7,6 @@ import android.widget.DatePicker
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.AdapterBarang
-import com.miftavy.android.inventory.adapter.Barang
 import com.miftavy.android.inventory.databinding.ActivityMainTambahBarangBinding
 import com.miftavy.android.inventory.model.DataBarangItem
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
