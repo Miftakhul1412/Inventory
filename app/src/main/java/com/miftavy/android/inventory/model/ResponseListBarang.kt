@@ -1,5 +1,7 @@
 package com.miftavy.android.inventory.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class ResponseListBarang(
@@ -33,4 +35,12 @@ data class DataBarangItem(
 
 	@field:SerializedName("jenis_barang")
 	val jenisBarang: String? = null
-)
+) : Parcelable {
+	override fun describeContents(): Int {
+		TODO("Not yet implemented")
+	}
+
+	override fun writeToParcel(p0: Parcel?, p1: Int) {
+		TODO("Not yet implemented")
+	}
+}

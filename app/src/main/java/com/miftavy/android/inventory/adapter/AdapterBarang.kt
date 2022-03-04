@@ -9,7 +9,7 @@ import com.miftavy.android.inventory.model.DataBarangItem
 import com.miftavy.android.inventory.network.Network
 
 //class AdapterBarang : RecyclerView.Adapter<AdapterBarang.ViewHolder>(){
-class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : RecyclerView.Adapter<AdapterBarang.ViewHolder>() {
+class AdapterBarang(private val viewTypes: Int = LINEARTYPE, private val clickItem: (DataBarangItem?) -> Unit) : RecyclerView.Adapter<AdapterBarang.ViewHolder>() {
 
     //memanggil class utama yaitu class adapterbarang
 
@@ -56,5 +56,9 @@ class AdapterBarang(private val clickItem: (DataBarangItem?) -> Unit) : Recycler
 
         //notifyItemInserted(listBarang.size)
         notifyDataSetChanged()
+    }
+    companion object {
+        const val GRIDTYPE = 1
+        const val LINEARTYPE = 2
     }
 }

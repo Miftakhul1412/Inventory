@@ -1,6 +1,8 @@
 package com.miftavy.android.inventory
 
+import android.app.Dialog
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.AdapterBarang
@@ -21,8 +23,9 @@ class ListBarangActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         //initialize adapter barang
-        adapterBarang = AdapterBarang {
-
+        adapterBarang = AdapterBarang(AdapterBarang.LINEARTYPE) {
+            val showDialogDetailBarang = DetailBarangActivity.newInstance(it)
+            showDialogDetailBarang.show(supportFragmentManager, "detail")
         }
 
         binding.rvListBarang.apply {
@@ -34,15 +37,20 @@ class ListBarangActivity : AppCompatActivity(){
     }
 
     private fun makeRequest() {
+        showLoading(false)
         CoroutineScope(Dispatchers.IO).launch {
             try{
                 val response = Network().getService().getListBarang()
                 //update data ke UI
                 MainScope().launch {
-                    updateUI(response)
+                    response.dataBarang?.let { adapterBarang.addItem(it)
+                    }
                 }
             }catch (e: Throwable){
                 e.printStackTrace()
+                MainScope().launch {
+                    Toast.makeText(this@ListBarangActivity, "uji", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -52,4 +60,8 @@ class ListBarangActivity : AppCompatActivity(){
             adapterBarang.addItem(it)
         }
     }
+    fun showLoading(isCancelable: Boolean = true) {
+
+    }
+
 }

@@ -1,10 +1,7 @@
 package com.miftavy.android.inventory.network
 
-import com.miftavy.android.inventory.model.ResponseLogin
 import com.miftavy.android.inventory.input.InputLogin
-import com.miftavy.android.inventory.model.ResponseListBarang
-import com.miftavy.android.inventory.model.ResponseListJenis
-import com.miftavy.android.inventory.model.ResponseListStok
+import com.miftavy.android.inventory.model.*
 import retrofit2.http.*
 
 interface ApiServices {
@@ -22,4 +19,8 @@ interface ApiServices {
 
     @POST("webservice/login")
     suspend fun getLogin(@Body inputLogin: InputLogin) : ResponseLogin
+
+    @GET("wwebservice/listbarang")
+    suspend fun getDataBarang(): ResponseListBarang
+
 }

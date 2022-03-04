@@ -1,5 +1,6 @@
 package com.miftavy.android.inventory.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class ResponseDetailBarang(
