@@ -58,16 +58,16 @@
         android:weightSum="3">
 
         <RelativeLayout
-            android:id="@+id/updateBarang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/updateBarang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-               android:text="Update Barang">
+                android:text="Update Barang">
 
             </Button>
         </RelativeLayout>

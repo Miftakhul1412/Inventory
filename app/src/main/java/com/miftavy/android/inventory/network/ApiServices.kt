@@ -39,4 +39,12 @@ interface ApiServices {
         @Part("batasMin") batasMin: RequestBody,
         @Part("stok") stok: RequestBody
     ): ResponseGeneral
+
+    @Multipart
+    @POST("webservice/tambah-jenis")
+    suspend fun tambahJenis(
+        @Part("id_jenis_barang") idJenisBarang: RequestBody,
+        @Part("jenis_barang") jenisBarang: RequestBody
+
+    ): ResponseGeneral
 }
