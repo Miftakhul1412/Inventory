@@ -21,15 +21,17 @@
         android:layout_alignParentBottom="true"
         style="@android:style/Widget.Material.ProgressBar.Horizontal"
         android:id="@+id/progress"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="INVENTORI LAUWBA"
-        android:textColor="@color/black"
-        android:gravity="center"
         android:layout_below="@id/logo"
+        android:gravity="center"
+        android:text="INVENTORI"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold">
+
     </TextView>
 
 

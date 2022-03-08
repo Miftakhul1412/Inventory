@@ -147,7 +147,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
                 e.printStackTrace()
                 MainScope().launch {
 //                    dismissLoading()
-                    Toast.makeText(this@MainTambahBarangActivity, "coba", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainTambahBarangActivity, "Gagal ", Toast.LENGTH_SHORT).show()
                     //showMessage(e.message.toString())
                 }
             }
