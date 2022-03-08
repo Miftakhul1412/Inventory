@@ -30,4 +30,13 @@ interface ApiServices {
         @Part("tanggal_masuk") tanggalMasuk: RequestBody?,
         @Part gambar: MultipartBody.Part
     ): ResponseGeneral
+
+    @Multipart
+    @POST("webservice/tambah-stok")
+    suspend fun tambahStok(
+        @Part("kode_stok") kodeStok: RequestBody,
+        @Part("kode_barang") kodeBarang: RequestBody?,
+        @Part("batasMin") batasMin: RequestBody,
+        @Part("stok") stok: RequestBody
+    ): ResponseGeneral
 }

@@ -35,12 +35,6 @@ data class DataBarangItem(
 
 	@field:SerializedName("jenis_barang")
 	val jenisBarang: String? = null
-) : Parcelable {
-	override fun describeContents(): Int {
-		TODO("Not yet implemented")
-	}
+) {
 
-	override fun writeToParcel(p0: Parcel?, p1: Int) {
-		TODO("Not yet implemented")
-	}
 }
