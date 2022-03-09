@@ -34,6 +34,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+
 }
 
 dependencies {
@@ -66,4 +68,7 @@ dependencies {
 
     //
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    //scan
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.1.2'
+
 }

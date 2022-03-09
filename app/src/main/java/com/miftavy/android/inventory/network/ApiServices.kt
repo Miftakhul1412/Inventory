@@ -47,4 +47,10 @@ interface ApiServices {
         @Part("jenis_barang") jenisBarang: RequestBody
 
     ): ResponseGeneral
+
+    suspend fun hapusBarang(
+        @Part("kodeBarang") kodeBarang: RequestBody,
+        @Part("jenis_barang") jenisBarang: RequestBody
+
+    ): ResponseGeneral
 }

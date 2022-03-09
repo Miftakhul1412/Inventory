@@ -67,7 +67,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Update Barang">
+                android:text="Update Barang"
+                android:textColorHint="#3F51B5"
+                android:textColorLink="#3F51B5">
 
             </Button>
         </RelativeLayout>
@@ -82,7 +84,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Update Stok">
+                android:text="Update Stok"
+                android:textColorHighlight="#3F51B5"
+                app:iconTint="#2196F3">
 
             </Button>
         </RelativeLayout>
@@ -96,7 +100,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Delete Barang">
+                android:text="Delete Barang"
+                android:textColorHint="#2196F3"
+                app:iconTint="#2196F3">
 
             </Button>
         </RelativeLayout>

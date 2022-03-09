@@ -17,12 +17,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="#ffff00"
+            android:background="#03A9F4"
             android:fontFamily="monospace"
             android:gravity="center"
             android:padding="20dp"
             android:text="INVENTARIS LAUWBA"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="15dp" />
     </LinearLayout>
@@ -45,12 +45,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="104dp"
-                    android:src="@drawable/ic_baseline_library_add_24">
+                    android:background="#03A9F4"
+                    android:src="@drawable/ic_add_plus">
 
                 </ImageView>
 
@@ -68,6 +70,7 @@
             android:id="@+id/lihatbarang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -79,7 +82,8 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_baseline_article_24"/>
+                    android:background="#03A9F4"
+                    android:src="@drawable/ic_list_barang"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -114,7 +118,8 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_baseline_add_box_24">
+                    android:background="#03A9F4"
+                    android:src="@drawable/ic_tambah_brg">
 
                 </ImageView>
 
@@ -143,7 +148,8 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_baseline_assignment_24">
+                    android:background="#03A9F4"
+                    android:src="@drawable/ic_list_stok">
 
                 </ImageView>
 
@@ -180,6 +186,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:background="#03A9F4"
                     android:src="@drawable/ic_jenis_barang">
 
                 </ImageView>
@@ -188,6 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+
                     android:text="Tambah Jenis Barang"
                     android:textColor="@color/black" />
 
@@ -209,6 +217,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:background="#03A9F4"
                     android:src="@drawable/ic_lihat_jenis">
 
                 </ImageView>

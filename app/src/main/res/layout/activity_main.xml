@@ -75,7 +75,7 @@
                     android:layout_height="match_parent"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:shadowColor="#FFEC47"
+                    android:shadowColor="#03A9F4"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,9 +85,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="#FFEC47"
+                android:backgroundTint="#03A9F4"
                 android:text="Sign In"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </RelativeLayout>

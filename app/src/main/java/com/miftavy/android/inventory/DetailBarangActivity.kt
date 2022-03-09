@@ -3,17 +3,12 @@ package com.miftavy.android.inventory
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.miftavy.android.inventory.databinding.ActivityDetailBarangBinding
 import com.miftavy.android.inventory.model.DataBarangItem
 import com.miftavy.android.inventory.network.Network
 
