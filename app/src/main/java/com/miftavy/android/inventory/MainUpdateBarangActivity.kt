@@ -2,6 +2,7 @@ package com.miftavy.android.inventory
 
 import android.R
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.miftavy.android.inventory.databinding.ActivityMainUpdateBarangBinding
@@ -25,12 +26,21 @@ class MainUpdateBarangActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        //set title
+        supportActionBar?.title = "Detail Berita"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val incomingData = intent.getParcelableExtra<DataBarangItem?>("data_barang")
 
         getListJenis(incomingData)
 
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun setToUI(incomingData: DataBarangItem?) {
         binding.kodeBarang.setText(incomingData?.kodeBarang)
         binding.datePicker.text = incomingData?.tanggalMasuk

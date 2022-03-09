@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logolauwba"
@@ -12,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainUpdateStokAvtivity"
+            android:exported="false" />
         <activity
             android:name=".MainUpdateBarangActivity"
             android:exported="false" />
@@ -32,7 +36,6 @@
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,9 +54,7 @@
             android:exported="false" />
         <activity
             android:name=".MainTambahBarangActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainMenuActivity"
             android:exported="false" />
@@ -62,14 +63,10 @@
             android:exported="true" />
         <activity
             android:name=".ListBarangActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ListStokActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
