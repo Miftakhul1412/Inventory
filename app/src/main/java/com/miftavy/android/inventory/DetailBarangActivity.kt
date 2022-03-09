@@ -79,6 +79,12 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
                 startActivity(this)
             }
         }
+//        view.findViewById<Button>(R.id.updateStok).setOnClickListener {
+//            Intent(requireActivity(), MainTambahStokActivity::class.java).apply {
+//                putExtra("data_barang", barangItem)
+//                startActivity(this)
+//            }
+//        }
     }
 
     companion object {

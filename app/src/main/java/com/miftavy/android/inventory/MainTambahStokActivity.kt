@@ -50,13 +50,13 @@ class MainTambahStokActivity : AppCompatActivity() {
 // kasih klik untuk tombol simpannya
         binding.simpanData.setOnClickListener{
             //ambil inputan text edit text
-            if (binding.kodeStok.text.toString()
-                .isEmpty() || binding.kodeBarang.selectedItem.toString().isNotEmpty()
-
-        ) {
-            Toast.makeText(this, "Isi dan pilih semua terlebih dahulu", Toast.LENGTH_SHORT).show()
-            //showMessage("Isi dan pilih semua terlebih dahulu")
-        } else {
+//            if (binding.kodeStok.text.toString()
+//                .isEmpty() || binding.kodeBarang.selectedItem.toString().isNotEmpty()
+//
+//        ) {
+//            Toast.makeText(this, "Isi dan pilih semua terlebih dahulu", Toast.LENGTH_SHORT).show()
+//            //showMessage("Isi dan pilih semua terlebih dahulu")
+//        } else {
 //                showLoading()
             val kodeStok = binding.kodeStok.text.toString()
                 .toRequestBody("text/plain".toMediaTypeOrNull())
@@ -78,7 +78,7 @@ class MainTambahStokActivity : AppCompatActivity() {
                 stok
             )
 
-        }
+
     }
 }
             private fun sendData(

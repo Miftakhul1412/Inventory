@@ -2,6 +2,7 @@ package com.miftavy.android.inventory
 
 import android.app.Dialog
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,10 @@ class ListBarangActivity : AppCompatActivity(){
         binding = ActivityListBarangBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //set title
+        supportActionBar?.title = "Detail Berita"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //initialize adapter barang
         adapterBarang = AdapterBarang(AdapterBarang.LINEARTYPE) {
             val showDialogDetailBarang = DetailBarangActivity.newInstance(it)
@@ -35,7 +40,12 @@ class ListBarangActivity : AppCompatActivity(){
 
         makeRequest()
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun makeRequest() {
         showLoading(false)
         CoroutineScope(Dispatchers.IO).launch {
