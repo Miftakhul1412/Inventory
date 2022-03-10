@@ -1,6 +1,7 @@
 package com.miftavy.android.inventory
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.AdapterStok
@@ -24,6 +25,9 @@ class ListStokActivity : AppCompatActivity(){
         adapterStok = AdapterStok {
 
         }
+        //set title
+        supportActionBar?.title = "List Stok"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.rvListJenis.apply {
             adapter = adapterStok
@@ -31,6 +35,13 @@ class ListStokActivity : AppCompatActivity(){
         }
 
         makeRequest()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun makeRequest() {

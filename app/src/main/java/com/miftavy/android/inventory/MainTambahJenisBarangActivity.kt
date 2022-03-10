@@ -2,6 +2,7 @@ package com.miftavy.android.inventory
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.*
@@ -34,10 +35,16 @@ class MainTambahJenisBarangActivity : AppCompatActivity() {
         adapterJenis = AdapterJenis{
             Toast.makeText(this, it?.jenisBarang, Toast.LENGTH_SHORT).show()
         }
+
+        //set title
+        supportActionBar?.title = "Tambah Jenis"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         binding.rvJenis.apply {
             adapter = adapterJenis
             layoutManager = LinearLayoutManager(this@MainTambahJenisBarangActivity)
         }
+
 //        kasih klik untuk tombol simpannya
         binding.simpanData.setOnClickListener {
             if (binding.jenisBarang.text.toString()
@@ -66,7 +73,12 @@ class MainTambahJenisBarangActivity : AppCompatActivity() {
 
         }
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun sendData(
         idJenisBarang: RequestBody,
         jenisBarang: RequestBody

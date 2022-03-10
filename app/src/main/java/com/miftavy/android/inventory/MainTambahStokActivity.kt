@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,6 +43,11 @@ class MainTambahStokActivity : AppCompatActivity() {
         adapterStok = AdapterStok{
             Toast.makeText(this, it?.kodeBarang, Toast.LENGTH_SHORT).show()
         }
+
+        //set title
+        supportActionBar?.title = "Tambah Stok"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         binding.rvStok.apply {
             adapter = adapterStok
             layoutManager = LinearLayoutManager(this@MainTambahStokActivity)
@@ -81,6 +87,12 @@ class MainTambahStokActivity : AppCompatActivity() {
 
     }
 }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
             private fun sendData(
     kodeStok: RequestBody,
     kodeBarang: RequestBody?,

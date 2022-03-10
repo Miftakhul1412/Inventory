@@ -8,6 +8,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -60,6 +61,10 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         binding.datePicker.setOnClickListener {
             dpd.show(supportFragmentManager, "datePicker")
         }
+
+        //set title
+        supportActionBar?.title = "Tambah Barang"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //adapterBarang = AdapterBarang()
         adapterBarang = AdapterBarang{
@@ -116,7 +121,12 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             }
         }
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun sendData(
         kodeBarang: RequestBody,
         namaBarang: RequestBody,

@@ -2,6 +2,7 @@ package com.miftavy.android.inventory
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miftavy.android.inventory.adapter.AdapterJenis
 import com.miftavy.android.inventory.databinding.ActivityListJenisBinding
@@ -24,6 +25,9 @@ class ListJenisActivity : AppCompatActivity() {
         adapterJenis = AdapterJenis {
 
         }
+        //set title
+        supportActionBar?.title = "List Jenis"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.rvListJenis.apply {
             adapter = adapterJenis
@@ -31,6 +35,13 @@ class ListJenisActivity : AppCompatActivity() {
         }
 
         makeRequest()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun makeRequest() {

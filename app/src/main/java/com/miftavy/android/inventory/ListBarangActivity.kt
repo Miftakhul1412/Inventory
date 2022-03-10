@@ -24,7 +24,7 @@ class ListBarangActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         //set title
-        supportActionBar?.title = "Detail Berita"
+        supportActionBar?.title = "List Barang"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //initialize adapter barang
