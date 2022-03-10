@@ -23,7 +23,7 @@ class ScanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityScanBinding.inflate(layoutInflater)
 
-        setContentView(R.layout.activity_scan)
+        setContentView(binding.root)
 
         setupPermissions()
         codeScanner()
