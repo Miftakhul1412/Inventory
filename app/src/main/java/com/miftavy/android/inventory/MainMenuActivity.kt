@@ -22,11 +22,16 @@ class MainMenuActivity : AppCompatActivity() {
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-            binding.tambahBarang.setOnClickListener {
-                Intent(this@MainMenuActivity, MainTambahBarangActivity::class.java).apply {
+            binding.scn.setOnClickListener {
+                Intent(this@MainMenuActivity, ScanActivity::class.java).apply {
                     startActivity(this)
                 }
             }
+        binding.tambahBarang.setOnClickListener {
+            Intent(this@MainMenuActivity, MainTambahBarangActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
             binding.tambahStok.setOnClickListener {
                 Intent(this@MainMenuActivity, MainTambahStokActivity::class.java).apply {
                     startActivity(this)

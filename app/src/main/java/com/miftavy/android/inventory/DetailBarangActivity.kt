@@ -85,6 +85,12 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
 //                startActivity(this)
 //            }
 //        }
+//        view.findViewById<Button>(R.id.deleteBarang).setOnClickListener {
+//            Intent(requireActivity(), MainDeleteBarangActivity::class.java).apply {
+//                putExtra("data_barang", barangItem)
+//                startActivity(this)
+//            }
+  //      }
     }
 
     companion object {

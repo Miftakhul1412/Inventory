@@ -1,6 +1,7 @@
 package com.miftavy.android.inventory
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -45,7 +46,13 @@ class ScanActivity : AppCompatActivity() {
             decodeCallback = DecodeCallback {
                 runOnUiThread {
                     binding.tvText.text = it.text
+
+                    Intent(applicationContext, ResultScanQR::class.java).apply {
+                        startActivity(this)
+                    }
                 }
+
+
             }
 
             errorCallback = ErrorCallback {
