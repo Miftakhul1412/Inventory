@@ -10,11 +10,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffff00"
+        android:background="#03A9F4"
         android:gravity="center"
         android:padding="20dp"
         android:text="UPDATE BARANG"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -93,9 +93,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#ffff00"
+        android:backgroundTint="#03A9F4"
         android:text="Pilih Gambar..."
-        android:textColor="@color/black" />
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/simpanData"
@@ -103,9 +103,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#FFC107"
+        android:backgroundTint="#03A9F4"
         android:text="Update Data"
-        android:textColor="@color/black" />
+        android:textColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBarang"

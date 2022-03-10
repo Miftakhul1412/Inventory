@@ -68,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Update Barang"
+                android:backgroundTint="#03A9F4"
                 android:textColorHint="#3F51B5"
                 android:textColorLink="#3F51B5">
 
@@ -85,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Update Stok"
+                android:backgroundTint="#03A9F4"
                 android:textColorHighlight="#3F51B5"
                 app:iconTint="#2196F3">
 
@@ -101,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Delete Barang"
+                android:backgroundTint="#03A9F4"
                 android:textColorHint="#2196F3"
                 app:iconTint="#2196F3">
 

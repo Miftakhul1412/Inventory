@@ -83,8 +83,6 @@ class MainTambahStokActivity : AppCompatActivity() {
                 batasMin,
                 stok
             )
-
-
     }
 }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
