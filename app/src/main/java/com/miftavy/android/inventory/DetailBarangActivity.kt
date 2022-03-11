@@ -10,7 +10,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.miftavy.android.inventory.model.DataBarangItem
-import com.miftavy.android.inventory.model.DataStokItem
 import com.miftavy.android.inventory.network.Network
 
 private const val ARG_PARAM1 = "barangItem"
@@ -19,7 +18,6 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
 
     private var barangItem: DataBarangItem? = null
     private var behavior: BottomSheetBehavior<View>? = null
-    private var stokItem: DataStokItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,7 +81,7 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
         }
 //        view.findViewById<Button>(R.id.updateStok).setOnClickListener {
 //            Intent(requireActivity(), MainTambahStokActivity::class.java).apply {
-//                putExtra("data_stok", stokItem)
+//                putExtra("data_barang", barangItem)
 //                startActivity(this)
 //            }
 //        }
@@ -103,12 +101,6 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
                     putParcelable(ARG_PARAM1, barangItem)
                 }
             }
-//        fun NewInstance(stokItem: DataStokItem?)=
-//            DetailBarangActivity().apply {
-//                arguments = Bundle().apply {
-//                    putParcelable(ARG_PARAM1, stokItem)
-//                }
-//            }
     }
 
 }

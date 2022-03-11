@@ -34,7 +34,7 @@ interface ApiServices {
     @Multipart
     @POST("webservice/tambah-stok")
     suspend fun tambahStok(
-        @Part("kode_stok") kodeStok: RequestBody,
+        @Part("kodeStok") kodeStok: RequestBody,
         @Part("kode_barang") kodeBarang: RequestBody?,
         @Part("batasMin") batasMin: RequestBody,
         @Part("stok") stok: RequestBody
