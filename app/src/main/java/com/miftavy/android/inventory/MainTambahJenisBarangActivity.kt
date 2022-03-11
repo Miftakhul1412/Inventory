@@ -31,14 +31,16 @@ class MainTambahJenisBarangActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        //set title
+        supportActionBar?.title = "Tambah Jenis"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //adapterBarang = AdapterBarang()
         adapterJenis = AdapterJenis{
             Toast.makeText(this, it?.jenisBarang, Toast.LENGTH_SHORT).show()
         }
 
-        //set title
-        supportActionBar?.title = "Tambah Jenis"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         binding.rvJenis.apply {
             adapter = adapterJenis

@@ -5,26 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".MainTambahStokActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#03A9F4"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="TAMBAH STOK"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+
 
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Kode Stok">
+        android:hint="Kode Stok"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/kodeStok"
@@ -39,7 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Batas Minimum">
+        android:hint="Batas Minimum"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/batasMin"
@@ -53,7 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Stok">
+        android:hint="Stok"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/stok"
@@ -67,12 +60,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Kode Barang" />
+        android:text="Kode Barang"
+        android:padding="10dp"/>
     <Spinner
         android:id="@+id/kodeBarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"  />
+        android:layout_marginTop="4dp"
+        android:padding="10dp"/>
 
     <Button
         android:id="@+id/simpanData"

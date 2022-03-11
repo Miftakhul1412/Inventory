@@ -7,16 +7,6 @@
     android:orientation="vertical"
 
     tools:context=".MainUpdateBarangActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#03A9F4"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="UPDATE BARANG"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -24,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Kode Barang"
-        >
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/kodeBarang"
@@ -38,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Barang"
-        >
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/namaBarang"
@@ -53,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Harga Beli"
-        >
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/hargaBeli"
@@ -67,25 +57,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Jenis Barang" />
+        android:text="Jenis Barang"
+        android:padding="10dp"/>
 
     <Spinner
         android:id="@+id/dropdownJenisBarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="4dp"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tanggal Masuk\t:" />
+        android:text="Tanggal Masuk\t:"
+        android:padding="10dp"/>
 
     <TextView
         android:id="@+id/datePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="8dp"
-        android:text="Pilih Tanggal" />
+        android:text="Pilih Tanggal"
+        android:padding="10dp"/>
 
 
     <Button

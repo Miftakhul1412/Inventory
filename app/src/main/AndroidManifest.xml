@@ -13,14 +13,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logolauwba"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ResultScanQR"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".ScanActivity"
             android:exported="true">
@@ -28,29 +28,35 @@
         </activity>
         <activity
             android:name=".MainUpdateBarangActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".DetailBarangActivity"
             android:exported="false"
-            tools:ignore="Instantiatable" />
+            tools:ignore="Instantiatable"
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".ListJenisActivity"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".MainTambahJenisBarangActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainTambahStokActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainTambahBarangActivity"
             android:exported="true">
@@ -59,15 +65,12 @@
         <activity
             android:name=".MainMenuActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".ListBarangActivity"
             android:exported="true">
@@ -75,7 +78,9 @@
         </activity>
         <activity
             android:name=".ListStokActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

@@ -54,6 +54,9 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             , calendar.get(Calendar.DAY_OF_MONTH))
 
         setContentView(binding.root)
+        //set title
+        supportActionBar?.title = "Tambah Barang"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         getListJenis()
 
@@ -62,9 +65,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             dpd.show(supportFragmentManager, "datePicker")
         }
 
-        //set title
-        supportActionBar?.title = "Tambah Barang"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         //adapterBarang = AdapterBarang()
         adapterBarang = AdapterBarang{
@@ -124,6 +125,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> onBackPressed()
+
         }
         return super.onOptionsItemSelected(item)
     }

@@ -36,7 +36,9 @@ class MainTambahStokActivity : AppCompatActivity() {
         binding = ActivityMainTambahStokBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-
+        //set title
+        supportActionBar?.title = "Tambah Stok"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         getListBarang()
 
         //adapterBarang = AdapterBarang()
@@ -44,9 +46,7 @@ class MainTambahStokActivity : AppCompatActivity() {
             Toast.makeText(this, it?.kodeBarang, Toast.LENGTH_SHORT).show()
         }
 
-        //set title
-        supportActionBar?.title = "Tambah Stok"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         binding.rvStok.apply {
             adapter = adapterStok

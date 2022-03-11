@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -25,11 +26,19 @@ class ScanActivity : AppCompatActivity() {
         binding = ActivityScanBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        //set title
+        supportActionBar?.title = "Scan Barcode"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupPermissions()
         codeScanner()
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
+    }
     private fun codeScanner() {
 
         codeScanner = CodeScanner(this, binding.scn)
