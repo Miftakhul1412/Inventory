@@ -34,7 +34,7 @@ interface ApiServices {
     @Multipart
     @POST("webservice/tambah-stok")
     suspend fun tambahStok(
-        @Part("kodeStok") kodeStok: RequestBody,
+        @Part("kode_stok") kodeStok: RequestBody,
         @Part("kode_barang") kodeBarang: RequestBody?,
         @Part("batasMin") batasMin: RequestBody,
         @Part("stok") stok: RequestBody
@@ -48,9 +48,13 @@ interface ApiServices {
 
     ): ResponseGeneral
 
+    @GET("webservice/hapus-barang/{kodeBarang}")
     suspend fun hapusBarang(
-        @Part("kodeBarang") kodeBarang: RequestBody,
-        @Part("jenis_barang") jenisBarang: RequestBody
-
+        @Path("kodeBarang") kodeBarang: String?
     ): ResponseGeneral
+
+    @GET("webservice/detail-barang")
+    suspend fun getDetailBarang(
+        @Query("kode_barang") kodeBarang: String?
+    ): ResponseDetailItemBarang
 }

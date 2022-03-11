@@ -2,14 +2,69 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
     tools:context=".ResultScanQR">
 
-    <TextView
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QR terdeteksi"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center" />
+
+        <TextView
+            android:id="@+id/namaBarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/gambar"
+            android:layout_toEndOf="@+id/gambar"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/tanggal_masuk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namaBarang"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/gambar"
+            android:layout_toEndOf="@+id/gambar"
+            android:paddingHorizontal="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/hargaBeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namaBarang"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/gambar"
+            android:layout_toEndOf="@+id/gambar"
+            android:paddingHorizontal="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/jenisBarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namaBarang"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/gambar"
+            android:layout_toEndOf="@+id/gambar"
+            android:paddingHorizontal="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </RelativeLayout>
 
 </RelativeLayout>

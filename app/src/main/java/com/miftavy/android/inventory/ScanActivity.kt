@@ -57,6 +57,7 @@ class ScanActivity : AppCompatActivity() {
                     binding.tvText.text = it.text
 
                     Intent(applicationContext, ResultScanQR::class.java).apply {
+                        putExtra("kode_barang", it.text)
                         startActivity(this)
                     }
                 }

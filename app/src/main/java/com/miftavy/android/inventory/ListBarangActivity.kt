@@ -33,6 +33,12 @@ class ListBarangActivity : AppCompatActivity(){
             showDialogDetailBarang.show(supportFragmentManager, "detail")
         }
 
+        binding.refresh.setOnRefreshListener {
+            binding.refresh.isRefreshing = false
+
+            makeRequest()
+        }
+
         binding.rvListBarang.apply {
             adapter = adapterBarang
             layoutManager = LinearLayoutManager(this@ListBarangActivity)
@@ -46,14 +52,13 @@ class ListBarangActivity : AppCompatActivity(){
         }
         return super.onOptionsItemSelected(item)
     }
-    private fun makeRequest() {
-        showLoading(false)
+    fun makeRequest() {
         CoroutineScope(Dispatchers.IO).launch {
             try{
                 val response = Network().getService().getListBarang()
                 //update data ke UI
                 MainScope().launch {
-                    response.dataBarang?.let { adapterBarang.addItem(it)
+                    response.dataBarang?.let { adapterBarang.addItem(it, true)
                     }
                 }
             }catch (e: Throwable){
@@ -63,15 +68,6 @@ class ListBarangActivity : AppCompatActivity(){
                 }
             }
         }
-    }
-
-    private fun updateUI(response: ResponseListBarang) {
-        response.dataBarang?.let {
-            adapterBarang.addItem(it)
-        }
-    }
-    fun showLoading(isCancelable: Boolean = true) {
-
     }
 
 }

@@ -1,6 +1,7 @@
 package com.miftavy.android.inventory
 
 import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.miftavy.android.inventory.model.DataBarangItem
 import com.miftavy.android.inventory.network.Network
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 private const val ARG_PARAM1 = "barangItem"
 
@@ -85,12 +89,23 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
 //                startActivity(this)
 //            }
 //        }
-//        view.findViewById<Button>(R.id.deleteBarang).setOnClickListener {
-//            Intent(requireActivity(), MainDeleteBarangActivity::class.java).apply {
-//                putExtra("data_barang", barangItem)
-//                startActivity(this)
-//            }
-  //      }
+        view.findViewById<Button>(R.id.deleteBarang).setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                try{
+                    val request = Network().getService().hapusBarang(barangItem?.kodeBarang)
+                    dismiss()
+                }catch (e: Throwable){
+                    e.printStackTrace()
+                }
+            }
+        }
+
+
+    }
+
+    override fun onCancel(dialog: DialogInterface) {
+        super.onCancel(dialog)
+        (requireActivity() as ListBarangActivity).makeRequest()
     }
 
     companion object {

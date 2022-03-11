@@ -26,8 +26,8 @@ import kotlin.concurrent.schedule
 
 
 class MainTambahStokActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainTambahStokBinding
-    private  lateinit var adapterStok: AdapterStok
+    private lateinit var binding: ActivityMainTambahStokBinding
+    private lateinit var adapterStok: AdapterStok
     private var listBarang = mutableListOf<DataBarangItem?>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +42,7 @@ class MainTambahStokActivity : AppCompatActivity() {
         getListBarang()
 
         //adapterBarang = AdapterBarang()
-        adapterStok = AdapterStok{
+        adapterStok = AdapterStok {
             Toast.makeText(this, it?.kodeBarang, Toast.LENGTH_SHORT).show()
         }
 
@@ -54,7 +54,7 @@ class MainTambahStokActivity : AppCompatActivity() {
         }
 
 // kasih klik untuk tombol simpannya
-        binding.simpanData.setOnClickListener{
+        binding.simpanData.setOnClickListener {
             //ambil inputan text edit text
 //            if (binding.kodeStok.text.toString()
 //                .isEmpty() || binding.kodeBarang.selectedItem.toString().isNotEmpty()
@@ -64,11 +64,12 @@ class MainTambahStokActivity : AppCompatActivity() {
 //            //showMessage("Isi dan pilih semua terlebih dahulu")
 //        } else {
 //                showLoading()
+
+            val kodeBarangDrop = binding.kodeBarang.selectedItem.toString()
+            val spl = kodeBarangDrop.split("--")
             val kodeStok = binding.kodeStok.text.toString()
                 .toRequestBody("text/plain".toMediaTypeOrNull())
-                val kodeBarang = listBarang.find {
-                    it?.kodeBarang == binding.kodeBarang.selectedItem.toString()
-                }?.namaBarang?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
+            val kodeBarang = spl.get(0).toRequestBody("text/plain".toMediaTypeOrNull())
             val batasMin = binding.batasMin.text.toString()
                 .toRequestBody("text/plain".toMediaTypeOrNull())
             val stok = binding.stok.text.toString()
@@ -77,84 +78,92 @@ class MainTambahStokActivity : AppCompatActivity() {
             Toast.makeText(this, "$kodeBarang", Toast.LENGTH_SHORT).show()
 
             sendData(
-
                 kodeStok,
                 kodeBarang,
                 batasMin,
                 stok
             )
+
+
+        }
     }
-}
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> onBackPressed()
         }
         return super.onOptionsItemSelected(item)
     }
-            private fun sendData(
-    kodeStok: RequestBody,
-    kodeBarang: RequestBody?,
-    batasMin: RequestBody,
-    stok: RequestBody
-) {
-    CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val res = Network().getService().tambahStok(
-                kodeStok = kodeStok,
-                kodeBarang = kodeBarang,
-                batasMin = batasMin,
-                stok = stok
-            )
-            MainScope().launch {
+
+    private fun sendData(
+        kodeStok: RequestBody,
+        kodeBarang: RequestBody?,
+        batasMin: RequestBody,
+        stok: RequestBody
+    ) {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val res = Network().getService().tambahStok(
+                    kodeStok = kodeStok,
+                    kodeBarang = kodeBarang,
+                    batasMin = batasMin,
+                    stok = stok
+                )
+                MainScope().launch {
 //                    dismissLoading()
-                Toast.makeText(this@MainTambahStokActivity, "Data berhasil ditambahkan. Halaman ini akan ditutup dalam 2 detik", Toast.LENGTH_SHORT).show()
-                //showMessage("Data berhasil ditambahkan. Halaman ini akan ditutup dalam 2 detik")
-                Timer(true).schedule(2000) {
-                    this@MainTambahStokActivity.finish()
+                    Toast.makeText(
+                        this@MainTambahStokActivity,
+                        "Data berhasil ditambahkan. Halaman ini akan ditutup dalam 2 detik",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    //showMessage("Data berhasil ditambahkan. Halaman ini akan ditutup dalam 2 detik")
+                    Timer(true).schedule(2000) {
+                        this@MainTambahStokActivity.finish()
+                    }
+                }
+            } catch (e: Throwable) {
+                e.printStackTrace()
+                MainScope().launch {
+//                    dismissLoading()
+                    Toast.makeText(this@MainTambahStokActivity, "coba", Toast.LENGTH_SHORT).show()
+                    //showMessage(e.message.toString())
                 }
             }
-        } catch (e: Throwable) {
-            e.printStackTrace()
-            MainScope().launch {
-//                    dismissLoading()
-                Toast.makeText(this@MainTambahStokActivity, "coba", Toast.LENGTH_SHORT).show()
-                //showMessage(e.message.toString())
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1000 && resultCode == Activity.RESULT_OK) {
+            data?.let {
+                Log.d("Intent Result", "onActivityResult: $data")
             }
         }
     }
-}
 
-override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-    super.onActivityResult(requestCode, resultCode, data)
-    if(requestCode == 1000 && resultCode == Activity.RESULT_OK){
-        data?.let {
-            Log.d("Intent Result", "onActivityResult: $data")
+    fun addKodeBarang(dataBarang: List<DataBarangItem?>?) {
+        val barang = mutableListOf<String?>()
+        dataBarang?.let { listBarang.addAll(it) }
+        dataBarang?.forEach {
+            barang.add("${it?.kodeBarang}--${it?.namaBarang}")
         }
-    }
-}
-fun addKodeBarang(dataBarang: List<DataBarangItem?>?) {
-    val barang = mutableListOf<String?>()
-    dataBarang?.let { listBarang.addAll(it) }
-    dataBarang?.forEach {
-        barang.add(it?.namaBarang)
-    }
-    val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, barang)
+        val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, barang)
 
-    binding.kodeBarang.adapter = adapter
-}
+        binding.kodeBarang.adapter = adapter
+    }
 
-private fun getListBarang(){
-    CoroutineScope(Dispatchers.IO).launch {
-        try{
-            val response = Network().getService().getListBarang()
-            MainScope().launch {
-                addKodeBarang(response.dataBarang)
+    private fun getListBarang() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = Network().getService().getListBarang()
+                MainScope().launch {
+                    addKodeBarang(response.dataBarang)
+                }
+            } catch (e: Throwable) {
+                e.printStackTrace()
             }
-        }catch (e: Throwable){
-            e.printStackTrace()
         }
     }
-}
 //            val kodeBarang = binding.kodeBarang.text.toString()
 //            val kodeStok = binding.kodeStok.text.toString()
 //            val batasMin = binding.batasMin.text.toString()
