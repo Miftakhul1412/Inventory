@@ -47,7 +47,8 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     private var sudahPilihGambar = false
     private var listJenis = mutableListOf<DataJenisItem?>()
     private var listKondisi = mutableListOf<DataBarangItem>()
-    private var listNamaSupplier = mutableListOf<DataBarangItem>()
+    private var listBarang = mutableListOf<DataBarangItem>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -64,7 +65,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         addKondisiBarang()
         getListJenis()
-        addNamaSuplier()
+//        getListBarang()
 
 
         binding.datePicker.setOnClickListener {
@@ -83,7 +84,6 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
                 binding.kodeBarang.setText(kodeBarang)
             }
         }
-
 
 
         //adapterBarang = AdapterBarang()
@@ -132,13 +132,14 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
                     .toRequestBody("text/plain".toMediaTypeOrNull())
                 val jumlahBeli = binding.jumlahBeli.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
-                val namaSupplier = listNamaSupplier.find {
+                val namaSupplier = listBarang.find {
                     it?.namaSupplier == binding.dropdownNamasupplier.selectedItem.toString()
                 }?.namaSupplier?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
                 val tanggalMasuk = binding.datePicker.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
 
                 Toast.makeText(this, jenisBarang.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, namaSupplier.toString(), Toast.LENGTH_SHORT).show()
 
                     sendData(
 
@@ -269,30 +270,30 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         }
     }
 
-    fun addNamaSuplier(dataSupplier: List<DataJenisItem?>?) {
-        val namaSupplier = mutableListOf<String?>()
-        dataSupplier?.let { listNamaSupplier.addAll(it) }
-        dataSupplier?.forEach {
-            namaSupplier.add(it?.jenisBarang)
-        }
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, namaSupplier)
-
-        binding.dropdownNamasupplier.adapter = adapter
-    }
-
-    private fun getListSupplier(){
-        CoroutineScope(Dispatchers.IO).launch {
-            try{
-                val response = Network().getService().getListSupplier()
-                MainScope().launch {
-                    addNamaSuplier(response.dataSupplier)
-                }
-            }catch (e: Throwable){
-                e.printStackTrace()
-            }
-        }
-    }
-
+//
+//fun addNamaSupplier(dataBarang: List<DataBarangItem?>?) {
+//    val Supplier = mutableListOf<String?>()
+//    dataBarang?.let { listBarang.addAll(it) }
+//    dataBarang?.forEach {
+//        Supplier.add(it?.namaSupplier)
+//    }
+//    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, Supplier)
+//
+//    binding.dropdownNamasupplier.adapter = adapter
+//}
+//
+//    private fun getListBarang() {
+//        CoroutineScope(Dispatchers.IO).launch {
+//            try {
+//                val response = Network().getService().getListBarang()
+//                MainScope().launch {
+//                    addNamaSupplier(response.dataBarang)
+//                }
+//            } catch (e: Throwable) {
+//                e.printStackTrace()
+//            }
+//        }
+//    }
     fun addKondisiBarang(){
         val jenis = mutableListOf("Baik", "Bekas","Rusak")
 

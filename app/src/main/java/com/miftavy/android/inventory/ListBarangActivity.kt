@@ -1,6 +1,7 @@
 package com.miftavy.android.inventory
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -44,7 +45,11 @@ class ListBarangActivity : AppCompatActivity(){
             adapter = adapterBarang
             layoutManager = LinearLayoutManager(this@ListBarangActivity)
         }
-
+        binding.tambahBarang.setOnClickListener {
+            Intent(this@ListBarangActivity, MainTambahBarangActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
         makeRequest()
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -71,5 +76,6 @@ class ListBarangActivity : AppCompatActivity(){
             }
         }
     }
+
 
 }

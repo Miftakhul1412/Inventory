@@ -19,47 +19,54 @@
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".adapter.AdapterSupplier"
+            android:exported="false" />
+        <activity
+            android:name=".adapter.AdapterUser"
+            android:exported="false" />
+        <activity
+            android:name=".ListSupplierActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResultScanQR"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ScanActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainUpdateBarangActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".DetailBarangActivity"
             android:exported="false"
-            tools:ignore="Instantiatable"
-            android:theme="@style/NoActionBar"/>
+            android:theme="@style/NoActionBar"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ListJenisActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".MainTambahJenisBarangActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainLogin"
             android:exported="false"
-            android:theme="@style/NoActionBar"/>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/NoActionBar">
-        </activity>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".MainTambahStokActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainTambahBarangActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainMenuActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,18 +76,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/NoActionBar"/>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ListBarangActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ListStokActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

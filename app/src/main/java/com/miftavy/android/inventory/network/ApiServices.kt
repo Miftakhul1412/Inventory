@@ -28,6 +28,10 @@ interface ApiServices {
         @Part("kondisi") kondisi: RequestBody?,
         @Part("jenis_barang") jenisBarang: RequestBody?,
         @Part("harga_beli") hargaBeli: RequestBody?,
+        @Part("merek") merek: RequestBody,
+        @Part(" satuan") satuan: RequestBody,
+        @Part("jumlah_beli") jumlahBeli: RequestBody,
+        @Part("nama_supplier") namaSupplier: RequestBody?,
         @Part("tanggal_masuk") tanggalMasuk: RequestBody?,
         @Part gambar: MultipartBody.Part
     ): ResponseGeneral

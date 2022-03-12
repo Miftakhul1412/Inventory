@@ -1,5 +1,6 @@
 package com.miftavy.android.inventory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -34,6 +35,11 @@ class ListJenisActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@ListJenisActivity)
         }
 
+        binding.tambahJenis.setOnClickListener {
+            Intent(this@ListJenisActivity, MainTambahJenisBarangActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
         makeRequest()
     }
 

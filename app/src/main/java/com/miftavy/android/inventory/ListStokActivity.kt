@@ -1,5 +1,6 @@
 package com.miftavy.android.inventory
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +35,11 @@ class ListStokActivity : AppCompatActivity(){
             layoutManager = LinearLayoutManager(this@ListStokActivity)
         }
 
+        binding.tambahStok.setOnClickListener {
+            Intent(this@ListStokActivity, MainTambahStokActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
         makeRequest()
     }
 
