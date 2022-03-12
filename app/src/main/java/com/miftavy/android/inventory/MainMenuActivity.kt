@@ -27,11 +27,7 @@ class MainMenuActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
-        binding.tambahBarang.setOnClickListener {
-            Intent(this@MainMenuActivity, MainTambahBarangActivity::class.java).apply {
-                startActivity(this)
-            }
-        }
+
             binding.tambahStok.setOnClickListener {
                 Intent(this@MainMenuActivity, MainTambahStokActivity::class.java).apply {
                     startActivity(this)
