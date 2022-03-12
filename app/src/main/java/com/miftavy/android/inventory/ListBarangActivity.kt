@@ -2,6 +2,7 @@ package com.miftavy.android.inventory
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -63,6 +64,7 @@ class ListBarangActivity : AppCompatActivity(){
                 }
             }catch (e: Throwable){
                 e.printStackTrace()
+                Log.d("GAGAL", "asd")
                 MainScope().launch {
                     Toast.makeText(this@ListBarangActivity, "uji", Toast.LENGTH_SHORT).show()
                 }

@@ -25,11 +25,24 @@ interface ApiServices {
     suspend fun tambahBarang(
         @Part("kode_barang") kodeBarang: RequestBody,
         @Part("nama_barang") namaBarang: RequestBody?,
+        @Part("kondisi") kondisi: RequestBody?,
         @Part("jenis_barang") jenisBarang: RequestBody?,
         @Part("harga_beli") hargaBeli: RequestBody?,
         @Part("tanggal_masuk") tanggalMasuk: RequestBody?,
         @Part gambar: MultipartBody.Part
     ): ResponseGeneral
+
+    @Multipart
+    @POST("webservice/update-barang")
+    suspend fun updateBarang(
+        @Part("kode_barang") kodeBarang: RequestBody,
+        @Part("nama_barang") namaBarang: RequestBody?,
+        @Part("jenis_barang") jenisBarang: RequestBody?,
+        @Part("harga_beli") hargaBeli: RequestBody?,
+        @Part("tanggal_masuk") tanggalMasuk: RequestBody?,
+        @Part gambar: MultipartBody.Part
+    ): ResponseGeneral
+
 
     @Multipart
     @POST("webservice/tambah-stok")

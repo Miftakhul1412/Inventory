@@ -20,5 +20,11 @@ data class DataJenisItem(
 	val createdAt: String? = null,
 
 	@field:SerializedName("jenis_barang")
-	val jenisBarang: String? = null
+	val jenisBarang: String? = null,
+
+	@field:SerializedName("kode_jenis")
+	val kodejenis: String? = null,
+
+	@field:SerializedName("lastid")
+	val lastId: String? = null
 )

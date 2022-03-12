@@ -58,20 +58,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Jenis Barang"
-        android:padding="10dp"/>
+        />
 
     <Spinner
         android:id="@+id/dropdownJenisBarang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:padding="10dp"/>
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tanggal Masuk\t:"
-        android:padding="10dp"/>
+        />
 
     <TextView
         android:id="@+id/datePicker"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:paddingVertical="8dp"
         android:text="Pilih Tanggal"
-        android:padding="10dp"/>
+       />
 
 
     <Button
@@ -92,7 +92,7 @@
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/simpanData"
+        android:id="@+id/updateBarang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

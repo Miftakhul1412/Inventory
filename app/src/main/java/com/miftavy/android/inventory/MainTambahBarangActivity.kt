@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewParent
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +34,7 @@ import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.text.FieldPosition
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -42,7 +46,8 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     private lateinit var photo: MultipartBody.Part
     private var sudahPilihGambar = false
     private var listJenis = mutableListOf<DataJenisItem?>()
-
+    private var listKondisi = mutableListOf<DataBarangItem>()
+    private var listNamaSupplier = mutableListOf<DataBarangItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -57,12 +62,26 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         //set title
         supportActionBar?.title = "Tambah Barang"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+        addKondisiBarang()
         getListJenis()
+        addNamaSuplier()
 
 
         binding.datePicker.setOnClickListener {
             dpd.show(supportFragmentManager, "datePicker")
+        }
+
+        binding.dropdownJenisBarang?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                var jenis= listJenis.get(position)
+                var lastkode = if (jenis?.lastId == null) "0001" else "0000"+(jenis?.lastId!!.toInt() + 1).toString();
+                val kodeBarang = jenis?.kodejenis + "-LTI-" + lastkode.substring(lastkode.length - 4, lastkode.length)
+                binding.kodeBarang.setText(kodeBarang)
+            }
         }
 
 
@@ -99,22 +118,39 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
                     .toRequestBody("text/plain".toMediaTypeOrNull())
                 val namaBarang = binding.namaBarang.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
+                val kondisi = listKondisi.find {
+                    it?.kondisi == binding.dropdownkondisi.selectedItem.toString()
+                }?.kondisi?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
                 val jenisBarang = listJenis.find {
                     it?.jenisBarang == binding.dropdownJenisBarang.selectedItem.toString()
                 }?.idJenisBarang?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
                 val hargaBeli = binding.hargaBeli.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
+                val merek = binding.merek.text.toString()
+                    .toRequestBody("text/plain".toMediaTypeOrNull())
+                val satuan = binding.satuan.text.toString()
+                    .toRequestBody("text/plain".toMediaTypeOrNull())
+                val jumlahBeli = binding.jumlahBeli.text.toString()
+                    .toRequestBody("text/plain".toMediaTypeOrNull())
+                val namaSupplier = listNamaSupplier.find {
+                    it?.namaSupplier == binding.dropdownNamasupplier.selectedItem.toString()
+                }?.namaSupplier?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
                 val tanggalMasuk = binding.datePicker.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
 
-                Toast.makeText(this, "$jenisBarang", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, jenisBarang.toString(), Toast.LENGTH_SHORT).show()
 
                     sendData(
 
                         kodeBarang,
                         namaBarang,
+                        kondisi,
                         jenisBarang,
                         hargaBeli,
+                        merek,
+                        satuan,
+                        jumlahBeli,
+                        namaSupplier,
                         tanggalMasuk,
                         photo
                     )
@@ -132,8 +168,13 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     private fun sendData(
         kodeBarang: RequestBody,
         namaBarang: RequestBody,
+        kondisi: RequestBody?,
         jenisBarang: RequestBody?,
         hargaBeli: RequestBody,
+        merek: RequestBody,
+        satuan: RequestBody,
+        jumlahBeli: RequestBody,
+        namaSupplier: RequestBody?,
         tanggalMasuk: RequestBody?,
         photo: MultipartBody.Part
     ) {
@@ -142,8 +183,13 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
                 val res = Network().getService().tambahBarang(
                     kodeBarang = kodeBarang,
                     namaBarang = namaBarang,
+                    kondisi = kondisi,
                     jenisBarang = jenisBarang,
                     hargaBeli = hargaBeli,
+                    merek = merek,
+                    satuan = satuan,
+                    jumlahBeli = jumlahBeli,
+                    namaSupplier = namaSupplier,
                     tanggalMasuk = tanggalMasuk,
                     gambar = photo
                 )
@@ -223,6 +269,37 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         }
     }
 
+    fun addNamaSuplier(dataSupplier: List<DataJenisItem?>?) {
+        val namaSupplier = mutableListOf<String?>()
+        dataSupplier?.let { listNamaSupplier.addAll(it) }
+        dataSupplier?.forEach {
+            namaSupplier.add(it?.jenisBarang)
+        }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, namaSupplier)
+
+        binding.dropdownNamasupplier.adapter = adapter
+    }
+
+    private fun getListSupplier(){
+        CoroutineScope(Dispatchers.IO).launch {
+            try{
+                val response = Network().getService().getListSupplier()
+                MainScope().launch {
+                    addNamaSuplier(response.dataSupplier)
+                }
+            }catch (e: Throwable){
+                e.printStackTrace()
+            }
+        }
+    }
+
+    fun addKondisiBarang(){
+        val jenis = mutableListOf("Baik", "Bekas","Rusak")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, jenis)
+
+        binding.dropdownkondisi.adapter = adapter
+    }
     override fun onDateSet(view: DatePickerDialog?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
         if(view?.tag == "datePicker"){
             binding.datePicker.text = String.format(Locale.getDefault(), "%d-%02d-%02d", year, monthOfYear+1, dayOfMonth)

@@ -35,5 +35,21 @@ data class DataBarangItem(
     val gambar: String? = null,
 
     @field:SerializedName("jenis_barang")
-    val jenisBarang: String? = null
+    val jenisBarang: String? = null,
+
+    @field:SerializedName("kondisi")
+    val kondisi: String? = null,
+
+    @field:SerializedName("merek")
+    val merek: String? = null,
+
+    @field:SerializedName("satuan")
+    val satuan: String? = null,
+
+    @field:SerializedName("jumlah_beli")
+    val jumlahBeli: String? = null,
+
+    @field:SerializedName("nama_supplier")
+    val namaSupplier: String? = null
+
 ) : Parcelable
