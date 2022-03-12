@@ -273,7 +273,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
 //
 //fun addNamaSupplier(dataBarang: List<DataBarangItem?>?) {
 //    val Supplier = mutableListOf<String?>()
-//    dataBarang?.let { listBarang.addAll(it) }
+//    dataBarang?.let { getListSupplier.addAll(it) }
 //    dataBarang?.forEach {
 //        Supplier.add(it?.namaSupplier)
 //    }
@@ -282,7 +282,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
 //    binding.dropdownNamasupplier.adapter = adapter
 //}
 //
-//    private fun getListBarang() {
+//    private fun getListSupplier() {
 //        CoroutineScope(Dispatchers.IO).launch {
 //            try {
 //                val response = Network().getService().getListBarang()

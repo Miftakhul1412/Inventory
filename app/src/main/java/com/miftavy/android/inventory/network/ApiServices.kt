@@ -11,6 +11,9 @@ interface ApiServices {
     @GET("webservice/listjenis")
     suspend fun getListJenis() : ResponseListJenis
 
+    @GET("webservice/listsupplier")
+    suspend fun getListSupplier() : ResponseListSupplier
+
     @GET("webservice/liststok")
     suspend fun getListStok() : ResponseListStok
 
