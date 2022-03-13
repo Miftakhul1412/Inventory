@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DetailBarangKeluarActivity"
+            android:exported="false" />
+        <activity
             android:name=".adapter.AdapterBarangKeluar"
             android:exported="false" />
         <activity

@@ -38,11 +38,11 @@ class MainMenuActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
-//            binding.listBarangKeluar.setOnClickListener {
-//                Intent(this@MainMenuActivity, MainTambahJenisBarangActivity::class.java).apply {
-//                    startActivity(this)
-//                }
-//            }
+            binding.listBarangKeluar.setOnClickListener {
+                Intent(this@MainMenuActivity, ListBarangKeluarActivity::class.java).apply {
+                    startActivity(this)
+                }
+            }
             binding.lihatbarang.setOnClickListener {
                 Intent(this@MainMenuActivity, ListBarangActivity::class.java).apply {
                     startActivity(this)

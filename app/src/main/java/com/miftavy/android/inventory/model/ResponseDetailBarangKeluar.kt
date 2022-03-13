@@ -1,16 +1,8 @@
 package com.miftavy.android.inventory.model
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
-data class ResponseListBarangKeluar(
-
-	@field:SerializedName("data_barang_keluar")
-	val dataBarangKeluar: List<DataBarangKeluarItem?>? = null
-)
-@Parcelize
-data class DataBarangKeluarItem(
+data class ResponseDetailBarangKeluar(
 
 	@field:SerializedName("keterangan")
 	val keterangan: String? = null,
@@ -38,5 +30,4 @@ data class DataBarangKeluarItem(
 
 	@field:SerializedName("jenis_barang")
 	val jenisBarang: String? = null
-
-) : Parcelable
+)

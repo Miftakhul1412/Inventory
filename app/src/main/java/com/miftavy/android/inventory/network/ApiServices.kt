@@ -26,6 +26,9 @@ interface ApiServices {
     @GET("webservice/listuser")
     suspend fun getListUser() : ResponseListUser
 
+    @GET("webservice/listbarangkeluar")
+    suspend fun getListBarangKeluar() : ResponseListBarangKeluar
+
     @Multipart
     @POST("webservice/tambah-barang")
     suspend fun tambahBarang(
