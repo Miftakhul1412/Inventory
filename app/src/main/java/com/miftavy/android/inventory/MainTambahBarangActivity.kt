@@ -21,6 +21,7 @@ import com.miftavy.android.inventory.adapter.AdapterBarang
 import com.miftavy.android.inventory.databinding.ActivityMainTambahBarangBinding
 import com.miftavy.android.inventory.model.DataBarangItem
 import com.miftavy.android.inventory.model.DataJenisItem
+import com.miftavy.android.inventory.model.DataSupplierItem
 import com.miftavy.android.inventory.network.Network
 import com.miftavy.android.inventory.utils.FileUtils
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
@@ -46,6 +47,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     private lateinit var photo: MultipartBody.Part
     private var sudahPilihGambar = false
     private var listJenis = mutableListOf<DataJenisItem?>()
+    private var listSupplier = mutableListOf<DataSupplierItem?>()
     private var listKondisi = mutableListOf<DataBarangItem>()
     private var listBarang = mutableListOf<DataBarangItem>()
 
@@ -65,7 +67,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         addKondisiBarang()
         getListJenis()
-//        getListBarang()
+        getListSupplier()
 
 
         binding.datePicker.setOnClickListener {
@@ -76,6 +78,10 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
+//            binding.dropdownNamaSupplier?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//
+//                }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 var jenis= listJenis.get(position)
@@ -132,14 +138,14 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
                     .toRequestBody("text/plain".toMediaTypeOrNull())
                 val jumlahBeli = binding.jumlahBeli.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
-                val namaSupplier = listBarang.find {
+                val namaSupplier = listSupplier.find {
                     it?.namaSupplier == binding.dropdownNamasupplier.selectedItem.toString()
                 }?.namaSupplier?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
                 val tanggalMasuk = binding.datePicker.text.toString()
                     .toRequestBody("text/plain".toMediaTypeOrNull())
 
                 Toast.makeText(this, jenisBarang.toString(), Toast.LENGTH_SHORT).show()
-                Toast.makeText(this, namaSupplier.toString(), Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, namaSupplier.toString(), Toast.LENGTH_SHORT).show()
 
                     sendData(
 
@@ -260,7 +266,7 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     private fun getListJenis(){
         CoroutineScope(Dispatchers.IO).launch {
             try{
-                val response = Network().getService().getListJenis()
+                 val response = Network().getService().getListJenis()
                 MainScope().launch {
                     addJenisBarang(response.dataJenis)
                 }
@@ -271,29 +277,29 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     }
 
 //
-//fun addNamaSupplier(dataBarang: List<DataBarangItem?>?) {
-//    val Supplier = mutableListOf<String?>()
-//    dataBarang?.let { getListSupplier.addAll(it) }
-//    dataBarang?.forEach {
-//        Supplier.add(it?.namaSupplier)
-//    }
-//    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, Supplier)
-//
-//    binding.dropdownNamasupplier.adapter = adapter
-//}
-//
-//    private fun getListSupplier() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            try {
-//                val response = Network().getService().getListBarang()
-//                MainScope().launch {
-//                    addNamaSupplier(response.dataBarang)
-//                }
-//            } catch (e: Throwable) {
-//                e.printStackTrace()
-//            }
-//        }
-//    }
+fun addNamaSupplier(dataSupplier: List<DataSupplierItem?>?) {
+    val Supplier = mutableListOf<String?>()
+    dataSupplier?.let { listSupplier.addAll(it) }
+    dataSupplier?.forEach {
+        Supplier.add(it?.namaSupplier)
+    }
+    val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, Supplier)
+
+    binding.dropdownNamasupplier.adapter = adapter
+}
+
+    private fun getListSupplier() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = Network().getService().getListSupplier()
+                MainScope().launch {
+                    addNamaSupplier(response.dataSupplier)
+                }
+            } catch (e: Throwable) {
+                e.printStackTrace()
+            }
+        }
+    }
     fun addKondisiBarang(){
         val jenis = mutableListOf("Baik", "Bekas","Rusak")
 
