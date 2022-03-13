@@ -28,16 +28,21 @@ class MainMenuActivity : AppCompatActivity() {
                 }
             }
 
-            binding.tambahStok.setOnClickListener {
-                Intent(this@MainMenuActivity, MainTambahStokActivity::class.java).apply {
+            binding.listSupplier.setOnClickListener {
+                Intent(this@MainMenuActivity, ListSupplierActivity::class.java).apply {
                     startActivity(this)
                 }
             }
-            binding.tambahJenis.setOnClickListener {
-                Intent(this@MainMenuActivity, MainTambahJenisBarangActivity::class.java).apply {
-                    startActivity(this)
-                }
+        binding.user.setOnClickListener {
+            Intent(this@MainMenuActivity, ListUserActivity::class.java).apply {
+                startActivity(this)
             }
+        }
+//            binding.listBarangKeluar.setOnClickListener {
+//                Intent(this@MainMenuActivity, MainTambahJenisBarangActivity::class.java).apply {
+//                    startActivity(this)
+//                }
+//            }
             binding.lihatbarang.setOnClickListener {
                 Intent(this@MainMenuActivity, ListBarangActivity::class.java).apply {
                     startActivity(this)

@@ -19,6 +19,12 @@
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".adapter.AdapterBarangKeluar"
+            android:exported="false" />
+        <activity
+            android:name=".ListBarangKeluarActivity"
+            android:exported="false" />
+        <activity
             android:name=".adapter.AdapterSupplier"
             android:exported="false" />
         <activity
