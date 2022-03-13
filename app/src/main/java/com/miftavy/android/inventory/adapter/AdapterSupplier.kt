@@ -21,8 +21,7 @@ class AdapterSupplier(private val clickItem: (DataSupplierItem?) -> Unit) : Recy
         fun bindItem(supplier: DataSupplierItem?) {
             binding.idSupplier.text = supplier?.idSupplier.toString()
             binding.namaSupplier.text = supplier?.namaSupplier.toString()
-            binding.alamat.text = supplier?.alamat.toString()
-            binding.kontak.text = supplier?.kontak.toString()
+
 //            binding.namaBarang.text = barang?.namaBarang
 
             //inti klik untuk masing-masing baris ke recyclerview nya

@@ -40,6 +40,11 @@ class ListStokActivity : AppCompatActivity(){
                 startActivity(this)
             }
         }
+        binding.updateStok.setOnClickListener {
+            Intent(this@ListStokActivity, MainUpdateStokAvtivity::class.java).apply {
+                startActivity(this)
+            }
+        }
         makeRequest()
     }
 

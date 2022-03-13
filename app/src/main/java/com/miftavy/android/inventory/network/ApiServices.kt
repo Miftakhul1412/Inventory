@@ -23,6 +23,12 @@ interface ApiServices {
     @POST("webservice/login")
     suspend fun getLogin(@Body inputLogin: InputLogin) : ResponseLogin
 
+    @GET("webservice/listsupplier")
+    suspend fun getListSupplier() : ResponseListSupplier
+
+    @GET("webservice/listuser")
+    suspend fun getListUser() : ResponseListUser
+
     @Multipart
     @POST("webservice/tambah-barang")
     suspend fun tambahBarang(

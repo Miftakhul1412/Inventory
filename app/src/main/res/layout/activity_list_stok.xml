@@ -20,6 +20,17 @@
         app:fabCradleRoundedCornerRadius="8dp"
         app:hideOnScroll="true" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updateStok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:scaleType="center"
+        android:tint="@android:color/white"
+        app:fabCustomSize="64dp"
+        app:layout_anchor="@id/bottomMenuBar"
+        app:maxImageSize="48dp"
+        app:srcCompat="@android:drawable/ic_dialog_dialer" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/tambahStok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

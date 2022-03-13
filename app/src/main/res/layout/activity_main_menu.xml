@@ -129,7 +129,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/tambahStok">
+            android:id="@+id/listSupplier">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -149,7 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Tambah Stok"
+                    android:text="List Supplier"
                     android:textColor="@color/black" />
 
             </LinearLayout>
@@ -196,7 +196,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/tambahJenis">
+            android:id="@+id/listBarangKeluar">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -217,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
 
-                    android:text="Tambah Jenis Barang"
+                    android:text="List Barang Keluar"
                     android:textColor="@color/black" />
 
             </LinearLayout>
