@@ -8,26 +8,5 @@
         android:id="@+id/rvListJenis"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomMenuBar"
-        style="@style/Widget.MaterialComponents.BottomAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="@color/black"
-        app:fabAlignmentMode="end"
-        app:fabCradleMargin="5dp"
-        app:fabCradleRoundedCornerRadius="8dp"
-        app:hideOnScroll="true" />
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/tambahJenis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:scaleType="center"
-        android:tint="@android:color/white"
-        app:fabCustomSize="64dp"
-        app:layout_anchor="@id/bottomMenuBar"
-        app:maxImageSize="48dp"
-        app:srcCompat="@android:drawable/ic_input_add" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

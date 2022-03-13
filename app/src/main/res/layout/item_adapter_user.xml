@@ -1,50 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp"
+    android:orientation="vertical"
     tools:context=".adapter.AdapterUser">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:background="#5DF6E8"
+            android:text="ID :"
+            />
 
         <TextView
             android:id="@+id/id"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            android:background="#5DF6E8"
+            android:hint="ID"
+            android:padding="10dp" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+
+            android:text="Email :"
+            />
+        <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:padding="10dp"
+        android:layout_below="@+id/id"
+         />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+
+            android:text="Jabatan :"
+            />
+    <TextView
+        android:id="@+id/jabatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:padding="10dp"
+        android:layout_alignParentEnd="true"
+
+
+        />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id"
-            android:layout_alignParentEnd="true"
-            android:layout_toStartOf="@id/id"
-            android:layout_toEndOf="@+id/id"
-            android:paddingHorizontal="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/jabatan"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/level"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-    </RelativeLayout>
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
 
-</RelativeLayout>
+            android:text="Nama :"
+            />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama User"
+        android:padding="10dp"
+        android:layout_below="@+id/jabatan"
+        android:layout_alignParentEnd="true"
+        android:paddingHorizontal="8dp"
+         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+
+            android:text="Level :"
+            />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:text="Level" />
+    </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

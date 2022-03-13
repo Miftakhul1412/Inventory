@@ -23,9 +23,6 @@ interface ApiServices {
     @POST("webservice/login")
     suspend fun getLogin(@Body inputLogin: InputLogin) : ResponseLogin
 
-    @GET("webservice/listsupplier")
-    suspend fun getListSupplier() : ResponseListSupplier
-
     @GET("webservice/listuser")
     suspend fun getListUser() : ResponseListUser
 
@@ -50,8 +47,13 @@ interface ApiServices {
     suspend fun updateBarang(
         @Part("kode_barang") kodeBarang: RequestBody,
         @Part("nama_barang") namaBarang: RequestBody?,
+        @Part("kondisi") kondisi: RequestBody?,
         @Part("jenis_barang") jenisBarang: RequestBody?,
         @Part("harga_beli") hargaBeli: RequestBody?,
+        @Part("merek") merek: RequestBody,
+        @Part(" satuan") satuan: RequestBody,
+        @Part("jumlah_beli") jumlahBeli: RequestBody,
+        @Part("nama_supplier") namaSupplier: RequestBody?,
         @Part("tanggal_masuk") tanggalMasuk: RequestBody?,
         @Part gambar: MultipartBody.Part
     ): ResponseGeneral
