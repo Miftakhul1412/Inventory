@@ -35,11 +35,11 @@ class ListJenisActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@ListJenisActivity)
         }
 
-        binding.tambahJenis.setOnClickListener {
-            Intent(this@ListJenisActivity, MainTambahJenisBarangActivity::class.java).apply {
-                startActivity(this)
-            }
-        }
+//        binding.tambahJenis.setOnClickListener {
+//            Intent(this@ListJenisActivity, MainTambahJenisBarangActivity::class.java).apply {
+//                startActivity(this)
+//            }
+//        }
         makeRequest()
     }
 

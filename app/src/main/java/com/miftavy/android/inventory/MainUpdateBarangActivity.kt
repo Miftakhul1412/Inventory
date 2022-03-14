@@ -44,7 +44,7 @@ class MainUpdateBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
     private var sudahPilihGambar = false
     private var listJenis = mutableListOf<DataJenisItem?>()
     private var listSupplier = mutableListOf<DataSupplierItem?>()
-    private var listKondisi = mutableListOf<DataBarangItem>()
+    private var listKondisi = mutableListOf<String>("Baik", "Bekas","Rusak")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -85,8 +85,8 @@ class MainUpdateBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             val namaBarang = binding.namaBarang.text.toString()
                 .toRequestBody("text/plain".toMediaTypeOrNull())
             val kondisi = listKondisi.find {
-                it?.kondisi == binding.dropdownkondisi.selectedItem.toString()
-            }?.kondisi?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
+                it == binding.dropdownkondisi.selectedItem.toString()
+            }?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
             val jenisBarang = listJenis.find {
                 it?.jenisBarang == binding.dropdownJenisBarang.selectedItem.toString()
             }?.idJenisBarang?.toString()?.toRequestBody("text/plain".toMediaTypeOrNull())
@@ -104,7 +104,9 @@ class MainUpdateBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             val tanggalMasuk = binding.datePicker.text.toString()
                 .toRequestBody("text/plain".toMediaTypeOrNull())
 
-            Toast.makeText(this, jenisBarang.toString(), Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, jenisBarang.toString(), Toast.LENGTH_SHORT).show()
+            if (!sudahPilihGambar)
+                photo = MultipartBody.Part.createFormData("gambar", "")
 
             sendData(
 
@@ -189,6 +191,8 @@ class MainUpdateBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
         binding.hargaBeli.setText(incomingData?.hargaBeli.toString())
         binding.namaBarang.setText(incomingData?.namaBarang)
         binding.jumlahBeli.setText(incomingData?.jumlahBeli)
+        binding.satuan.setText(incomingData?.satuan)
+
 
         if (incomingData?.jenisBarang != null) {
             val spinnerPosition: Int = adapter.getPosition(incomingData.jenisBarang)

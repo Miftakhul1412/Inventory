@@ -79,9 +79,9 @@ interface ApiServices {
 
     ): ResponseGeneral
 
-    @GET("webservice/hapus-barang/{kodeBarang}")
+    @GET("webservice/hapus-barang/{kode_barang}")
     suspend fun hapusBarang(
-        @Path("kodeBarang") kodeBarang: String?
+        @Path("kode_barang") kodeBarang: String?
     ): ResponseGeneral
 
     @GET("webservice/detail-barang")

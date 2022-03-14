@@ -35,16 +35,16 @@ class ListStokActivity : AppCompatActivity(){
             layoutManager = LinearLayoutManager(this@ListStokActivity)
         }
 
-        binding.tambahStok.setOnClickListener {
-            Intent(this@ListStokActivity, MainTambahStokActivity::class.java).apply {
-                startActivity(this)
-            }
-        }
-        binding.updateStok.setOnClickListener {
-            Intent(this@ListStokActivity, MainUpdateStokAvtivity::class.java).apply {
-                startActivity(this)
-            }
-        }
+//        binding.tambahStok.setOnClickListener {
+//            Intent(this@ListStokActivity, MainTambahStokActivity::class.java).apply {
+//                startActivity(this)
+//            }
+//        }
+//        binding.updateStok.setOnClickListener {
+//            Intent(this@ListStokActivity, MainUpdateStokAvtivity::class.java).apply {
+//                startActivity(this)
+//            }
+//        }
         makeRequest()
     }
 

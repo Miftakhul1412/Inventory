@@ -6,27 +6,49 @@
     tools:context=".MainTambahStokActivity">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/kodeStok"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/stok"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+                android:background="#5DF6E8"
+                android:text="Kode Stok  :"
+                />
+
+            <TextView
+                android:id="@+id/kodeStok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5DF6E8"
+
+                android:padding="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/kodeStok"
-            android:layout_alignParentEnd="true"
-            android:layout_toStartOf="@id/kodeStok"
-            android:layout_toEndOf="@+id/kodeStok"
-            android:paddingHorizontal="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-    </RelativeLayout>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
 
+                android:text="Stok :"
+                />
+            <TextView
+                android:id="@+id/stok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_below="@+id/id"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
 </RelativeLayout>
