@@ -65,6 +65,7 @@ class DetailBarangKeluarActivity : BottomSheetDialogFragment() {
 
     private fun initViews(view: View) {
         view.findViewById<TextView>(R.id.pengguna)?.text = barangkeluar?.pengguna
+        view.findViewById<TextView>(R.id.kodeBarangKeluar)?.text = barangkeluar?.kodeBarangKeluar.toString()
         view.findViewById<TextView>(R.id.kodeBarang)?.text = barangkeluar?.kodeBarang.toString()
         view.findViewById<TextView>(R.id.keterangan)?.text = barangkeluar?.keterangan
         view.findViewById<TextView>(R.id.tanggalkeluar)?.text = barangkeluar?.tanggalKeluar
