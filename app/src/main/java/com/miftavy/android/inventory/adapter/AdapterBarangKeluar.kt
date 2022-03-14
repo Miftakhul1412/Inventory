@@ -27,6 +27,16 @@ class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEA
         fun bindItem(barangkeluar: DataBarangKeluarItem?){
             binding.kodeBarangKeluar.text = barangkeluar?.kodeBarangKeluar.toString()
             binding.pengguna.text = barangkeluar?.pengguna
+            binding.tglKeluar.text = barangkeluar?.tanggalKeluar
+            binding.jumlah.text = barangkeluar?.jumlah.toString()
+            binding.keterangan.text = barangkeluar?.keterangan
+            binding.kodeBarang.text = barangkeluar?.kodeBarang
+
+
+
+
+
+
 
 
             //inti klik untuk masing-masing baris ke recyclerview nya

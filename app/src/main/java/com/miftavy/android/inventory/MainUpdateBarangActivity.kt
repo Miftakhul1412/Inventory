@@ -206,10 +206,7 @@ class MainUpdateBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             val spinnerPosition: Int = adapter.getPosition(incomingData.kondisi)
             binding.dropdownkondisi.setSelection(spinnerPosition)
         }
-//        if (incomingData?.gambar != null) {
-//            val spinnerPosition: Int = adapter.getPosition(incomingData.namaSupplier)
-//            binding.dropdownNamasupplier.setSelection(spinnerPosition)
-//        }
+//
     }
 
     private fun getListJenis(incomingData: DataBarangItem?) {

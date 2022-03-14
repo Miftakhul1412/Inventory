@@ -18,11 +18,12 @@
         android:scaleType="centerCrop" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/namaBarang"
@@ -35,18 +36,73 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+                android:text="Kode : Jenis Barang  :"
+                />
+
 
         <TextView
-            android:id="@+id/jenisBarang"
+            android:id="@+id/kodeJenisBarang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+                android:text="Harga: Beli  :"
+                />
         <TextView
             android:id="@+id/hargaBeli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+                android:text="Satuan :"
+                />
+            <TextView
+                android:id="@+id/satuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hello_blank_fragment" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+                android:text="Merek  :"
+                />
+            <TextView
+                android:id="@+id/merek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hello_blank_fragment" />
+        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout

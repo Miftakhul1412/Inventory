@@ -21,6 +21,9 @@ class AdapterBarang(private val viewTypes: Int = LINEARTYPE, private val clickIt
                 Glide.with(binding.root.context)
                     .load("${Network().BASE_URL}${barang?.gambar}")
                     .into(binding.gambar)
+                binding.tanggalMasuk.text = barang?.tanggalMasuk
+
+
 
                 //inti klik untuk masing-masing baris ke recyclerview nya
                 binding.root.setOnClickListener{

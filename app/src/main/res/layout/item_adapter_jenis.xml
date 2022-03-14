@@ -7,25 +7,50 @@
     tools:context=".adapter.AdapterJenis">
 
 
-        <TextView
-            android:id="@+id/idJenisBarang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="ID Jenis Barang"
-            android:padding="10dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-        <TextView
-            android:id="@+id/jenisBarang"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jenis Barang"
-            android:layout_below="@+id/idJenisBarang"
-            android:layout_alignParentEnd="true"
-            android:layout_toStartOf="@id/idJenisBarang"
-            android:layout_toEndOf="@+id/idJenisBarang"
-            android:paddingHorizontal="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="match_parent"
+                            android:background="#5DF6E8"
+                            android:text="ID Jenis Barang  :"
+                            />
+
+                        <TextView
+                            android:id="@+id/idJenisBarang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#5DF6E8"
+
+                            android:padding="10dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="52dp"
+                            android:layout_height="match_parent"
+
+                            android:text="Jenis Barang :"
+                            />
+                        <TextView
+                            android:id="@+id/jenisBarang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:layout_below="@+id/idJenisBarang"
+                            />
+                </LinearLayout>
+
+
+        </LinearLayout>
 
 </RelativeLayout>

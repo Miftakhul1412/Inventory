@@ -1,31 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".adapter.AdapterBarangKeluar">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/kodeBarangKeluar"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/pengguna"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="#5DF6E8"
+                android:text="Kode Barang Keluar  :"
+                />
+
+            <TextView
+                android:id="@+id/kodeBarangKeluar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5DF6E8"
+
+                android:padding="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/kodeBarangKeluar"
-            android:layout_alignParentEnd="true"
-            android:layout_toStartOf="@id/kodeBarangKeluar"
-            android:layout_toEndOf="@+id/kodeBarangKeluar"
-            android:paddingHorizontal="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-    </RelativeLayout>
-</RelativeLayout>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+
+                android:text="Pengguna :"
+                />
+
+            <TextView
+                android:id="@+id/pengguna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/kodeBarangKeluar"
+                android:padding="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+
+                android:text="Kode Barang :"
+                />
+
+            <TextView
+                android:id="@+id/kodeBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+
+                    android:text="Jumlah :"
+                    />
+
+                <TextView
+                    android:id="@+id/jumlah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/kodeBarang"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+
+                    android:text="Tanggal Keluar :"
+                    />
+
+                <TextView
+                    android:id="@+id/tglKeluar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/jumlah"
+                    android:padding="10dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+
+                    android:text="Keterangan :"
+                    />
+
+                <TextView
+                    android:id="@+id/keterangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tglKeluar"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>

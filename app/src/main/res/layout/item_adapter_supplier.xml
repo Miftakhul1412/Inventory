@@ -40,10 +40,48 @@
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
 
-                android:text="NAMA :"
+                android:text="Nama :"
                 />
             <TextView
                 android:id="@+id/namaSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_below="@+id/id"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+
+                android:text="Kontak :"
+                />
+            <TextView
+                android:id="@+id/kontak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_below="@+id/id"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+
+                android:text="Alamat :"
+                />
+            <TextView
+                android:id="@+id/alamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"

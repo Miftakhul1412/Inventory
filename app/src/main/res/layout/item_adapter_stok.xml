@@ -3,20 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainTambahStokActivity">
+    tools:context=".adapter.AdapterStok">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="52dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:background="#5DF6E8"
                 android:text="Kode Stok  :"
@@ -27,6 +28,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#5DF6E8"
+
+                android:padding="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="Kode Barang  :"
+                />
+
+            <TextView
+                android:id="@+id/kodeBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
 
                 android:padding="10dp" />
         </LinearLayout>

@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lihat Barang"
+                    android:text="Lihat Barang "
                     android:gravity="center"
                     android:textColor="@color/black" />
 
@@ -65,14 +65,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="104dp"
                     android:background="#03A9F4"
-                    android:src="@drawable/ic_add_plus">
+                    android:src="@drawable/ic_list_user">
 
                 </ImageView>
 
@@ -80,7 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="List User"
+                    android:text="Lihat User"
                     android:textColor="@color/black" />
 
             </LinearLayout>
@@ -141,7 +141,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="#03A9F4"
-                    android:src="@drawable/ic_tambah_brg">
+                    android:src="@drawable/ic_list_supplier">
 
                 </ImageView>
 
@@ -149,7 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="List Supplier"
+                    android:text="Lihat Supplier"
                     android:textColor="@color/black" />
 
             </LinearLayout>
@@ -208,7 +208,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="#03A9F4"
-                    android:src="@drawable/ic_jenis_barang">
+                    android:src="@drawable/ic_list_barang_keluar">
 
                 </ImageView>
 

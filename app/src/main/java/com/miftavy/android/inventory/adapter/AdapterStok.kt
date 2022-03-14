@@ -16,7 +16,8 @@ class AdapterStok(private val clickItem: (DataStokItem?) -> Unit) : RecyclerView
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindItem(stok: DataStokItem?) {
-            binding.kodeStok.text = stok?.kodeBarang
+            binding.kodeBarang.text = stok?.kodeBarang
+            binding.kodeStok.text = stok?.kodeStok.toString()
             binding.stok.text = stok?.stok.toString()
 //            binding.namaBarang.text = barang?.namaBarang
 
