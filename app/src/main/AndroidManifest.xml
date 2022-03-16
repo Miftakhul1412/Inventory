@@ -20,7 +20,7 @@
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainMenuUserActivity"
+            android:name=".user.MainMenuUserActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivityUser"

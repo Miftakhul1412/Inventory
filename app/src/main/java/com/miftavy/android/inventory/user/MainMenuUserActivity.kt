@@ -1,7 +1,8 @@
-package com.miftavy.android.inventory
+package com.miftavy.android.inventory.user
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.miftavy.android.inventory.R
 
 class MainMenuUserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
