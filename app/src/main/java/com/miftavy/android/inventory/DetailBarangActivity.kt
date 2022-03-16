@@ -69,10 +69,13 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
 
     private fun initViews(view: View) {
         view.findViewById<TextView>(R.id.namaBarang)?.text = barangItem?.namaBarang
+        view.findViewById<TextView>(R.id.kodeBarang)?.text = barangItem?.kodeBarang
         view.findViewById<TextView>(R.id.hargaBeli)?.text = barangItem?.hargaBeli.toString()
         view.findViewById<TextView>(R.id.kodeJenisBarang)?.text = barangItem?.jenisBarang
         view.findViewById<TextView>(R.id.satuan)?.text = barangItem?.satuan
         view.findViewById<TextView>(R.id.merek)?.text = barangItem?.merek
+        view.findViewById<TextView>(R.id.kondisi)?.text = barangItem?.kondisi
+
 
 
         Glide.with(requireActivity())

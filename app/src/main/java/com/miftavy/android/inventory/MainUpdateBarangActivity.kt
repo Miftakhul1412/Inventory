@@ -165,7 +165,7 @@ class MainUpdateBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
 //                    dismissLoading()
                     Toast.makeText(
                         this@MainUpdateBarangActivity,
-                        "Data berhasil ditambahkan. Halaman ini akan ditutup dalam 2 detik",
+                        "Data berhasil diubah. Halaman ini akan ditutup dalam 2 detik",
                         Toast.LENGTH_SHORT
                     ).show()
                     //showMessage("Data berhasil ditambahkan. Halaman ini akan ditutup dalam 2 detik")

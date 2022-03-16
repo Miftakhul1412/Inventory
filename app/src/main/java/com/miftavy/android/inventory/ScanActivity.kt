@@ -59,6 +59,7 @@ class ScanActivity : AppCompatActivity() {
                     Intent(applicationContext, ResultScanQR::class.java).apply {
                         putExtra("kode_barang", it.text)
                         startActivity(this)
+                        finish()
                     }
                 }
 

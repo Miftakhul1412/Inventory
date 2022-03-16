@@ -8,6 +8,7 @@ import android.view.View
 import com.miftavy.android.inventory.databinding.ActivityMainMenuBinding
 import com.miftavy.android.inventory.model.ResponseListBarang
 import com.miftavy.android.inventory.network.Network
+import com.pixplicity.easyprefs.library.Prefs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -59,6 +60,15 @@ class MainMenuActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+
+        binding.logout.setOnClickListener {
+            //logout
+        Prefs.clear()
+        finishAffinity()
+            Intent(this@MainMenuActivity, MainLogin::class.java).apply {
+                startActivity(this)
+            }
+        }
     }
 //    private fun searchBarang(query: String?) {
 //            show progressbar first

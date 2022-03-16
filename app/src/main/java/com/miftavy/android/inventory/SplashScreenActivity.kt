@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.pixplicity.easyprefs.library.Prefs
 
 class SplashScreenActivity : AppCompatActivity() {
     private var handler = Handler()
@@ -13,11 +14,23 @@ class SplashScreenActivity : AppCompatActivity() {
 
         handler.postDelayed({
             //menampilkan setelah splash ke mainmenuactivity
-            Intent(this@SplashScreenActivity, MainLogin::class.java).apply {
-                startActivity(this)
-                finish()
+            if(Prefs.contains("email")){
+                Intent(this@SplashScreenActivity, MainMenuActivity::class.java).apply {
+                    startActivity(this)
+                    finish()
+                }
+            }else {
+                Intent(this@SplashScreenActivity, MainLogin::class.java).apply {
+                    startActivity(this)
+                    finish()
+                }
             }
         }, 3000)
+
+        //logout
+//        Prefs.clear()
+//        finishAffinity()
+        //panggil halaman login lagi
     }
 
     override fun onStop() {

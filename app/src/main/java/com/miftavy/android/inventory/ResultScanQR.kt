@@ -47,6 +47,11 @@ class ResultScanQR : AppCompatActivity() {
 
     private fun updateUI(detailBarang: ResponseDetailItemBarang) {
         binding.namaBarang.text = detailBarang.detail?.namaBarang
+        binding.kodeBarang.text = detailBarang.detail?.kodeBarang
+        binding.merek.text = detailBarang.detail?.merek
+        binding.kondisi.text = detailBarang.detail?.kondisi
+        binding.satuan.text = detailBarang.detail?.satuan
+        binding.kodeJenisBarang.text = detailBarang.detail?.jenisBarang
         binding.tanggalMasuk.text = detailBarang.detail?.tanggalMasuk
         Glide.with(binding.root.context)
             .load("${Network().BASE_URL}${detailBarang.detail?.gambar}")
@@ -56,8 +61,13 @@ class ResultScanQR : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            android.R.id.home -> onBackPressed()
+            android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+
+    override fun onBackPressed() {
+        finish()
     }
 }
