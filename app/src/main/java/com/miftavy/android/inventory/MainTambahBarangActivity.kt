@@ -86,7 +86,9 @@ class MainTambahBarangActivity : AppCompatActivity(), DatePickerDialog.OnDateSet
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 var jenis= listJenis.get(position)
                 var lastkode = if (jenis?.lastId == null) "0001" else "0000"+(jenis?.lastId!!.toInt() + 1).toString();
-                val kodeBarang = jenis?.kodejenis + "-LTI-" + lastkode.substring(lastkode.length - 4, lastkode.length)
+                val kodeBarang = jenis?.kodejenis + "-LTI-" + lastkode.substring(lastkode.length - 4, lastkode
+
+                    .length)
                 binding.kodeBarang.setText(kodeBarang)
             }
         }
