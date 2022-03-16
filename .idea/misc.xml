@@ -45,7 +45,6 @@
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_scan.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/activity_splash_screen.xml" value="0.1925925925925926" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_barang.xml" value="0.12" />
-        <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_barang_keluar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_jenis.xml" value="0.25" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_stok.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Nur Khofifah/StudioProjects/Inventory/app/src/main/res/layout/item_adapter_supplier.xml" value="0.20416666666666666" />
@@ -70,6 +69,7 @@
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/drawable/ic_screen_foreground.xml" value="0.1255" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/drawable/ic_tambah_brg.xml" value="0.1535" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_detail_barang.xml" value="0.19814814814814816" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_detail_barang_keluar.xml" value="0.1824074074074074" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_list_barang.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_list_jenis.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_list_stok.xml" value="0.20416666666666666" />

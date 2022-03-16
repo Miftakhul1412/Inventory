@@ -27,6 +27,11 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
             android:textSize="18sp"
             android:textStyle="bold" />
+        <TextView
+            android:id="@+id/kodeBarangKeluar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_blank_fragment" />
 
 
         <TextView
