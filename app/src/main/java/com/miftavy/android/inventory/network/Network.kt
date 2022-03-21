@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class Network {
-    val BASE_URL: String = "http://192.168.43.4/Inventory/public/"
+    val BASE_URL: String = "http://192.168.43.99/Inventory/public/"
     private fun setOkHttp(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor().setLevel(
             HttpLoggingInterceptor.Level.BASIC

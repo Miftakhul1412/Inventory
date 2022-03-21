@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewParent
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -19,7 +18,6 @@ import com.kroegerama.imgpicker.BottomSheetImagePicker
 import com.kroegerama.imgpicker.ButtonType
 import com.miftavy.android.inventory.adapter.AdapterBarang
 import com.miftavy.android.inventory.databinding.ActivityMainTambahBarangBinding
-import com.miftavy.android.inventory.model.DataBarangItem
 import com.miftavy.android.inventory.model.DataJenisItem
 import com.miftavy.android.inventory.model.DataSupplierItem
 import com.miftavy.android.inventory.network.Network
@@ -35,7 +33,6 @@ import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.ByteArrayOutputStream
 import java.io.File
-import java.text.FieldPosition
 import java.util.*
 import kotlin.concurrent.schedule
 
