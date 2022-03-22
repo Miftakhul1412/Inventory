@@ -46,6 +46,18 @@ interface ApiServices {
     ): ResponseGeneral
 
     @Multipart
+    @POST("webservice/tambah-barangkeluar")
+    suspend fun tambahBarangKeluar(
+        @Part("kode_barang_keluar") kodeBarangKeluar: RequestBody,
+        @Part("jenis_barang") jenisBarang: RequestBody?,
+        @Part("kode_barang") kodeBarang: RequestBody?,
+        @Part("tanggal_keluar") tanggalKeluar: RequestBody?,
+        @Part("jumlah") jumlah: RequestBody,
+        @Part("keterangan") keterangan: RequestBody,
+        @Part name: RequestBody?
+    ) : ResponseGeneral
+
+    @Multipart
     @POST("webservice/update-barang")
     suspend fun updateBarang(
         @Part("kode_barang") kodeBarang: RequestBody,
