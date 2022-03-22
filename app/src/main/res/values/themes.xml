@@ -29,4 +29,6 @@
     <style name="Theme.Inventory.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Inventory.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
 </resources>
