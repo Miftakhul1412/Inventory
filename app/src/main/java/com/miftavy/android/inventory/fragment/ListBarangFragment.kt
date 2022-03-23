@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.miftavy.android.inventory.R
+import com.miftavy.android.inventory.databinding.FragmentHomeBinding
+import com.miftavy.android.inventory.databinding.FragmentListBarangBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,43 +20,54 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ListBarangFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    //    private lateinit var adapterPengumuman: AdapterPengumuman
+//    lateinit var adapterpeng : AdapterPengumumanAll
+    private lateinit var binding: FragmentListBarangBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    //
+    //ini dipanggil ketika layout itu sudah tampil
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_barang, container, false)
-    }
+        binding = FragmentListBarangBinding.bind(view)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListBarangFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ListBarangFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+//        val listPengumuman = mutableListOf<PengumumanItem>()
+//        val pengumumanItem1 = PengumumanItem()
+//        pengumumanItem1.gambar = R.drawable.ic_home
+//        pengumumanItem1.judul = "Contoh Judul Pengumuman"
+//        pengumumanItem1.lampiran = "Contoh Lampiran Pengumuman"
+//
+//        listPengumuman.add(pengumumanItem1)
+//
+//        val pengumumanItem2 = PengumumanItem()
+//        pengumumanItem2.gambar = R.drawable.ic_home
+//        pengumumanItem2.judul = "Pengumuman 2"
+//        pengumumanItem2.lampiran = "Contoh Pengumuman 2"
+//
+//        listPengumuman.add(pengumumanItem2)
+//
+//        adapterPengumuman = AdapterPengumuman(onItemClick = {
+//            Intent(requireActivity(), DetailPengumuman::class.java).apply {
+//                putExtra("item_pengumuman", it)
+//                startActivity(this)
+//            }
+//        })
+//        binding.rvPengumuman.adapter = adapterPengumuman
+//        binding.rvPengumuman.layoutManager = LinearLayoutManager(requireActivity())
+//
+//        adapterPengumuman.addItem(listPengumuman)
+
+//        binding.pkp.setOnClickListener {
+//            Intent(requireActivity(), PkpActivity::class.java).apply {
+//                startActivity(this)
+//            }
+//        }
+//
+//        binding.monitoring.setOnClickListener {
+//            Intent(requireActivity(), MonitoringActivity::class.java).apply {
+//                startActivity(this)
+//            }
+//        }
     }
 }
