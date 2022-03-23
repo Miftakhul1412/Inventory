@@ -54,7 +54,7 @@ interface ApiServices {
         @Part("tanggal_keluar") tanggalKeluar: RequestBody?,
         @Part("jumlah") jumlah: RequestBody,
         @Part("keterangan") keterangan: RequestBody,
-        @Part name: RequestBody?
+        @Part("name") name: RequestBody?
     ) : ResponseGeneral
 
     @Multipart
