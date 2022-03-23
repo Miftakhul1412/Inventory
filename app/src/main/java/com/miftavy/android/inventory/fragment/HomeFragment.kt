@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.miftavy.android.inventory.R
+import com.miftavy.android.inventory.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,13 +21,13 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment(R.layout.fragment_home) {
 //    private lateinit var adapterPengumuman: AdapterPengumuman
 //    lateinit var adapterpeng : AdapterPengumumanAll
-//    private lateinit var binding: FragmentHomeBinding
+private lateinit var binding: FragmentHomeBinding
 //
-//    //ini dipanggil ketika layout itu sudah tampil
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        binding = FragmentHomeBinding.bind(view)
+    //ini dipanggil ketika layout itu sudah tampil
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentHomeBinding.bind(view)
 
 
 
@@ -67,5 +68,5 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 //                startActivity(this)
 //            }
 //        }
-//    }
+    }
 }
