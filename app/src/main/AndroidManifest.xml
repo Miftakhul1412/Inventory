@@ -20,11 +20,11 @@
         android:theme="@style/Theme.Inventory"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".NewBarangAdapter"
+            android:exported="false" />
+        <activity
             android:name=".user.MainTambahBarangKeluarActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".user.MainMenuUserActivity"
             android:exported="true">
@@ -39,9 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".DetailBarangKeluarActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".adapter.AdapterBarangKeluar"
             android:exported="false" />
@@ -87,9 +85,7 @@
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/NoActionBar">
-
-        </activity>
+            android:theme="@style/NoActionBar"></activity>
         <activity
             android:name=".MainTambahStokActivity"
             android:exported="false" />
@@ -105,9 +101,7 @@
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".ListBarangActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ListStokActivity"
             android:exported="true" />

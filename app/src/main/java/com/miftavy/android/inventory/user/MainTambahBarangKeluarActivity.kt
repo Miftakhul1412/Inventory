@@ -50,7 +50,7 @@ class MainTambahBarangKeluarActivity : AppCompatActivity(), DatePickerDialog.OnD
 
         setContentView(binding.root)
         //set title
-        supportActionBar?.title = "Tambah Barang Keluar"
+        supportActionBar?.title = "Tambah Barang Pinjam"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         getListUser()
         getListJenis()

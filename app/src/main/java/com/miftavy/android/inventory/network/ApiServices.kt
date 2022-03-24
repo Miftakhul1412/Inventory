@@ -30,10 +30,13 @@ interface ApiServices {
     suspend fun getListBarangKeluar() : ResponseListBarangKeluar
 
     @GET("webservice/lihatbarangkeluarbyuser")
-    suspend fun getListBarangKeluarByUser() : ResponseLihatJenisBarangKeluarByUser
+    suspend fun getListBarangKeluarByUser() : ResponseLihatBarangKeluarByUser
 
     @GET("webservice/lihatjenisbarang")
-    suspend fun getListJenisBarang() : ResponseLihatJenisBarang
+    suspend fun getListJenisBarang(): ResponseLihatJenisBarang
+
+    @GET("webservice/caribarang")
+    suspend fun getCariBarang(@Query("nama_barang") namaBarang: String?): ResponseListBarang
 
     @Multipart
     @POST("webservice/tambah-barang")

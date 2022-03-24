@@ -1,12 +1,14 @@
 package com.miftavy.android.inventory.model
 
 import com.google.gson.annotations.SerializedName
+import retrofit2.Callback
 
 data class ResponseLihatJenisBarang(
 
 	@field:SerializedName("lihat")
 	val lihat: List<LihatItem?>? = null
 )
+
 
 data class LihatItem(
 
