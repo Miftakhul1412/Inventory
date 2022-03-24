@@ -24,9 +24,7 @@
             android:exported="true">
 
         </activity>
-        <activity
-            android:name=".user.MainProfileUserActivity"
-            android:exported="false" />
+
         <activity
             android:name=".user.MainMenuUserActivity"
             android:exported="true">
@@ -107,7 +105,9 @@
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".ListBarangActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".ListStokActivity"
             android:exported="true" />

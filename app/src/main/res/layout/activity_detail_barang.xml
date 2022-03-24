@@ -147,7 +147,7 @@
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:weightSum="2">
+        android:weightSum="1">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -155,35 +155,17 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/updateBarang"
+                android:id="@+id/pinjam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Update Barang"
                 android:backgroundTint="#03A9F4"
+                android:gravity="center"
+                android:text="Pinjam Barang"
                 android:textColorHint="#3F51B5"
                 android:textColorLink="#3F51B5">
 
             </Button>
         </RelativeLayout>
 
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/deleteBarang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#03A9F4"
-                android:gravity="center"
-                android:text="Delete Barang"
-                android:textColorHint="#2196F3"
-                app:iconTint="#2196F3">
-
-            </Button>
-        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

@@ -3,6 +3,8 @@ package com.miftavy.android.inventory.user
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.FragmentTransaction
+import com.miftavy.android.inventory.ListBarangActivity
 import com.miftavy.android.inventory.R
 import com.miftavy.android.inventory.ScanActivity
 import com.miftavy.android.inventory.databinding.ActivityMainMenuUserBinding
@@ -34,7 +36,7 @@ class MainMenuUserActivity : AppCompatActivity() {
                 R.id.brg ->{
 //                    ngapain setelah diklik mwnuakun
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.container_fragment, ListBarangFragment()).commit()
+                        .replace(R.id.container_fragment, ListBarangActivity()).commit()
                     return@setOnItemSelectedListener true
                 }
                 R.id.history ->{
@@ -59,6 +61,7 @@ class MainMenuUserActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
+
 
     }
 }

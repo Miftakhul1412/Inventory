@@ -12,6 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.miftavy.android.inventory.model.DataBarangItem
 import com.miftavy.android.inventory.network.Network
+import com.miftavy.android.inventory.user.MainTambahBarangKeluarActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -84,8 +85,8 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
             .circleCrop()
             .into(view.findViewById(R.id.gambar))
 
-        view.findViewById<Button>(R.id.updateBarang).setOnClickListener {
-            Intent(requireActivity(), MainUpdateBarangActivity::class.java).apply {
+        view.findViewById<Button>(R.id.pinjam).setOnClickListener {
+            Intent(requireActivity(), MainTambahBarangKeluarActivity::class.java).apply {
                 putExtra("data_barang", barangItem)
                 startActivity(this)
             }
@@ -96,17 +97,6 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
 //                startActivity(this)
 //            }
 //        }
-        view.findViewById<Button>(R.id.deleteBarang).setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                try{
-                    val request = Network().getService().hapusBarang(barangItem?.kodeBarang)
-                    dismiss()
-                }catch (e: Throwable){
-                    e.printStackTrace()
-                }
-            }
-        }
-
 
     }
 
