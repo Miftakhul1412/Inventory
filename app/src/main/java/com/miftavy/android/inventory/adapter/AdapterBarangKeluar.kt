@@ -12,11 +12,12 @@ import com.miftavy.android.inventory.databinding.ItemAdapterBarangBinding
 import com.miftavy.android.inventory.databinding.ItemAdapterBarangKeluarBinding
 import com.miftavy.android.inventory.databinding.ItemAdapterSupplierBinding
 import com.miftavy.android.inventory.model.DataBarangItem
+import com.miftavy.android.inventory.model.DataBarangKeluarByUserItem
 import com.miftavy.android.inventory.model.DataBarangKeluarItem
 import com.miftavy.android.inventory.model.DataSupplierItem
 import com.miftavy.android.inventory.network.Network
 
-class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEARTYPE, private val clickItem: (DataBarangKeluarItem?) -> Unit) : RecyclerView.Adapter<AdapterBarangKeluar.ViewHolder>() {
+class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEARTYPE, private val clickItem: (DataBarangKeluarByUserItem?) -> Unit) : RecyclerView.Adapter<AdapterBarangKeluar.ViewHolder>() {
 
 
     //memanggil class utama yaitu class adapterbarang
