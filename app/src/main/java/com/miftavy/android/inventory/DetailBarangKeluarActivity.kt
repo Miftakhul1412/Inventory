@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.miftavy.android.inventory.model.DataBarangKeluarByUserItem
 import com.miftavy.android.inventory.model.DataBarangKeluarItem
 
 private const val ARG_PARAM1 = "barangkeluar"
@@ -78,7 +79,7 @@ class DetailBarangKeluarActivity : BottomSheetDialogFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(barangkeluar: DataBarangKeluarItem?) =
+        fun newInstance(barangkeluar: DataBarangKeluarByUserItem?) =
             DetailBarangKeluarActivity().apply {
                 arguments = Bundle().apply {
                     putParcelable(ARG_PARAM1, barangkeluar)

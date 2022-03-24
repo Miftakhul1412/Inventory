@@ -2,7 +2,7 @@ package com.miftavy.android.inventory.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseLihatJenisBarangKeluarByUser(
+data class ResponseLihatBarangKeluarByUser(
 
 	@field:SerializedName("data_barang_keluar_by_user")
 	val dataBarangKeluarByUser: List<DataBarangKeluarByUserItem?>? = null

@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.miftavy.android.inventory.MainLogin
 import com.miftavy.android.inventory.R
 import com.miftavy.android.inventory.databinding.FragmentProfilBinding
+import com.pixplicity.easyprefs.library.Prefs
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,13 +31,15 @@ class ProfilFragment : Fragment(R.layout.fragment_profil) {
 
 //        binding.namauser.text = Prefs.getString(Constant.NAMA)
 //        binding.userid.text = Prefs.getString(Constant.USERID)
-//
-//        binding.logout.setOnClickListener {
-//            Prefs.clear()
-//            Intent(requireActivity(), MainLogin::class.java).apply {
-//                startActivity(this)
-//            }
-//            requireActivity().finishAffinity()
-//        }
+
+        binding.logout.setOnClickListener {
+            Prefs.clear()
+            Intent(requireActivity(), MainLogin::class.java).apply {
+                startActivity(this)
+            }
+            requireActivity().finishAffinity()
+        }
+
+
     }
 }

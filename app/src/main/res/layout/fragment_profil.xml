@@ -22,11 +22,11 @@
 
         <TextView
             android:id="@+id/txtnamauser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Nama User"
             android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="20dp" />
 
         <TextView
             android:layout_below="@+id/txtnamauser"

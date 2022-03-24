@@ -1,19 +1,14 @@
 package com.miftavy.android.inventory
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.miftavy.android.inventory.adapter.AdapterBarang
 import com.miftavy.android.inventory.adapter.AdapterBarang.Companion.LINEARTYPE
 import com.miftavy.android.inventory.adapter.AdapterBarangKeluar
-import com.miftavy.android.inventory.databinding.ActivityListBarangBinding
 import com.miftavy.android.inventory.databinding.ActivityListBarangKeluarBinding
-import com.miftavy.android.inventory.model.DataBarangKeluarItem
-import com.miftavy.android.inventory.model.ResponseListBarangKeluar
 import com.miftavy.android.inventory.network.Network
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
