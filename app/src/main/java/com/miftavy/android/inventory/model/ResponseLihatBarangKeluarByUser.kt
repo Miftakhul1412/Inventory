@@ -53,12 +53,12 @@ data class DataBarangKeluarByUserItem(
 	}
 
 	override fun describeContents(): Int {
-		TODO("Not yet implemented")
-	}
+        TODO("Not yet implemented")
+    }
 
-	override fun writeToParcel(p0: Parcel?, p1: Int) {
-		TODO("Not yet implemented")
-	}
+    override fun writeToParcel(p0: Parcel?, p1: Int) {
+        TODO("Not yet implemented")
+    }
 
 	companion object CREATOR : Parcelable.Creator<DataBarangKeluarByUserItem> {
 		override fun createFromParcel(parcel: Parcel): DataBarangKeluarByUserItem {

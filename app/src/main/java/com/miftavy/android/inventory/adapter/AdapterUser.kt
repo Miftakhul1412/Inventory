@@ -37,6 +37,7 @@ class AdapterUser(private val clickItem: (DataUserItem?) -> Unit) : RecyclerView
         return ViewHolder(
             //memanggil layout itemadapterbarang
             ItemAdapterUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
         )
     }
 
