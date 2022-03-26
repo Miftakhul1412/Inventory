@@ -34,6 +34,7 @@
             app:itemTextColor="@color/black"
             app:menu="@menu/bottom"
             android:layout_alignParentBottom="true"/>
+
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

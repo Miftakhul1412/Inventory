@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.miftavy.android.inventory.databinding.ActivityMainBinding
 import com.miftavy.android.inventory.input.InputLogin
 import com.miftavy.android.inventory.network.Network
+import com.miftavy.android.inventory.user.MainMenuUserActivity
 import com.pixplicity.easyprefs.library.Prefs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -55,7 +56,9 @@ class MainActivity : AppCompatActivity() {
                     Prefs.putString("nama", response.name)
                     Prefs.putString("email", response.email)
                     Prefs.putString("level", response.level)
-                    Intent(this@MainActivity, MainMenuActivity::class.java).apply {
+
+
+                    Intent(this@MainActivity, MainMenuUserActivity::class.java).apply {
                         startActivity(this)
                     }
                 }

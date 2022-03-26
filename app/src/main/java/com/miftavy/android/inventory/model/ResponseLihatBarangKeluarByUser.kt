@@ -1,5 +1,7 @@
 package com.miftavy.android.inventory.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class ResponseLihatBarangKeluarByUser(
@@ -36,4 +38,35 @@ data class DataBarangKeluarByUserItem(
 
 	@field:SerializedName("jenis_barang")
 	val jenisBarang: String? = null
-)
+) : Parcelable {
+	constructor(parcel: Parcel) : this(
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString()
+	) {
+	}
+
+	override fun describeContents(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun writeToParcel(p0: Parcel?, p1: Int) {
+        TODO("Not yet implemented")
+    }
+
+	companion object CREATOR : Parcelable.Creator<DataBarangKeluarByUserItem> {
+		override fun createFromParcel(parcel: Parcel): DataBarangKeluarByUserItem {
+			return DataBarangKeluarByUserItem(parcel)
+		}
+
+		override fun newArray(size: Int): Array<DataBarangKeluarByUserItem?> {
+			return arrayOfNulls(size)
+		}
+	}
+}

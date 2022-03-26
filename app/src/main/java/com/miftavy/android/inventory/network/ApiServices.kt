@@ -30,7 +30,7 @@ interface ApiServices {
     suspend fun getListBarangKeluar() : ResponseListBarangKeluar
 
     @GET("webservice/lihatbarangkeluarbyuser")
-    suspend fun getListBarangKeluarByUser() : ResponseLihatJenisBarangKeluarByUser
+    suspend fun getListBarangKeluarByUser() : ResponseLihatBarangKeluarByUser
 
     @GET("webservice/lihatjenisbarang")
     suspend fun getListJenisBarang() : ResponseLihatJenisBarang
