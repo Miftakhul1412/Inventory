@@ -26,14 +26,14 @@ class ListBarangActivity: AppCompatActivity(){
     private lateinit var binding: ActivityListBarangBinding
     private lateinit var adapterBarang : AdapterBarang
 
-//    private var listJenis = mutableListOf<DataJenisItem?>()
-    private var listJenis = mutableListOf<LihatItem?>()
+    private var listJenis = mutableListOf<DataJenisItem?>()
+//    private var listJenis = mutableListOf<LihatItem?>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListBarangBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getListJenisBarang()
+        getListJenis()
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 CoroutineScope(Dispatchers.IO).launch {
@@ -75,21 +75,24 @@ class ListBarangActivity: AppCompatActivity(){
 
             makeRequest()
         }
-        binding.dropdownJenisBarang?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                TODO("Not yet implemented")
-            }
+    binding.dropdownJenisBarang?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        override fun onNothingSelected(parent: AdapterView<*>?) {
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
+        }
 //            binding.dropdownNamaSupplier?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
 //                override fun onNothingSelected(parent: AdapterView<*>?) {
 //
 //                }
 
+        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            var jenis= listJenis.get(position)
+            var lastkode = if (jenis?.lastId == null) "0001" else "0000"+(jenis?.lastId!!.toInt() + 1).toString();
+            val kodeBarang = jenis?.kodejenis + "-LTI-" + lastkode.substring(lastkode.length - 4, lastkode
 
-        }
+                .length)
+            binding.dropdownJenisBarang
+       }
+    }
 
         initAdapter()
 
@@ -171,7 +174,7 @@ class ListBarangActivity: AppCompatActivity(){
             }
         }
     }
-    fun addJenisLihatBarang(dataJenis: List<LihatItem?>?) {
+    fun addJenisBarang(dataJenis: List<DataJenisItem?>?) {
         val jenis = mutableListOf<String?>()
         dataJenis?.let { listJenis.addAll(it) }
         dataJenis?.forEach {
@@ -182,12 +185,12 @@ class ListBarangActivity: AppCompatActivity(){
         binding.dropdownJenisBarang.adapter = adapter
     }
 
-    private fun getListJenisBarang(){
+    private fun getListJenis(){
         CoroutineScope(Dispatchers.IO).launch {
             try{
-                val response = Network().getService().getListJenisBarang()
+                val response = Network().getService().getListJenis()
                 MainScope().launch {
-                    addJenisLihatBarang(response.lihat)
+                    addJenisBarang(response.dataJenis)
                 }
             }catch (e: Throwable){
                 e.printStackTrace()

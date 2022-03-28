@@ -274,5 +274,7 @@ class MainTambahBarangKeluarActivity : AppCompatActivity(), DatePickerDialog.OnD
 
 private fun Spinner.selectedItem(dropdownkodeBarang: String) {
 
-
 }
+
+
+
