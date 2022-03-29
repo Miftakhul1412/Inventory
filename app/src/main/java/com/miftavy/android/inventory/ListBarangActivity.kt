@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +26,7 @@ import kotlin.contracts.Returns
 class ListBarangActivity: AppCompatActivity(){
     private lateinit var binding: ActivityListBarangBinding
     private lateinit var adapterBarang : AdapterBarang
+    private  var filterIdJenisBarang : String = ""
 
     private var listJenis = mutableListOf<DataJenisItem?>()
 //    private var listJenis = mutableListOf<LihatItem?>()
@@ -42,7 +44,8 @@ class ListBarangActivity: AppCompatActivity(){
                         //update data ke UI
                         MainScope().launch {
                             adapterBarang.addItem(mutableListOf(), true)
-                            response.dataBarang?.let { adapterBarang.addItem(it, true)
+                            response.dataBarang?.let {
+                                adapterBarang.addItem(it, true)
                             }
                         }
                     }catch (e: Throwable){
@@ -86,11 +89,8 @@ class ListBarangActivity: AppCompatActivity(){
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             var jenis= listJenis.get(position)
-            var lastkode = if (jenis?.lastId == null) "0001" else "0000"+(jenis?.lastId!!.toInt() + 1).toString();
-            val kodeBarang = jenis?.kodejenis + "-LTI-" + lastkode.substring(lastkode.length - 4, lastkode
-
-                .length)
-            binding.dropdownJenisBarang
+            filterIdJenisBarang= jenis?.idJenisBarang.toString()
+            makeRequest()
        }
     }
 
@@ -159,7 +159,7 @@ class ListBarangActivity: AppCompatActivity(){
     fun makeRequest() {
         CoroutineScope(Dispatchers.IO).launch {
             try{
-                val response = Network().getService().getListBarang()
+                val response = Network().getService().getListBarang(filterIdJenisBarang)
                 //update data ke UI
                 MainScope().launch {
                     response.dataBarang?.let { adapterBarang.addItem(it, true)
@@ -197,4 +197,8 @@ class ListBarangActivity: AppCompatActivity(){
             }
         }
     }
+}
+
+private fun Spinner.setText(kodeBarang: String) {
+
 }

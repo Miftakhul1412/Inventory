@@ -18,7 +18,9 @@ interface ApiServices {
     suspend fun getListStok() : ResponseListStok
 
     @GET("webservice/listbarang")
-    suspend fun getListBarang() : ResponseListBarang
+    suspend fun getListBarang(
+        @Query("id_jenis_barang") idJenisBarang : String? = null
+    ) : ResponseListBarang
 
     @POST("webservice/login")
     suspend fun getLogin(@Body inputLogin: InputLogin) : ResponseLogin
@@ -33,7 +35,9 @@ interface ApiServices {
     suspend fun getListBarangKeluarByUser() : ResponseLihatBarangKeluarByUser
 
     @GET("webservice/lihatjenisbarang")
-    suspend fun getListJenisBarang(): ResponseLihatJenisBarang
+    suspend fun getListJenisBarang(
+        @Query("id_jenis_barang") idJenisBarang : Int?
+    ): ResponseBerdasarJenis
 
     @GET("webservice/caribarang")
     suspend fun getCariBarang(@Query("nama_barang") namaBarang: String?): ResponseListBarang
@@ -63,7 +67,7 @@ interface ApiServices {
         @Part("tanggal_keluar") tanggalKeluar: RequestBody?,
         @Part("jumlah") jumlah: RequestBody,
         @Part("keterangan") keterangan: RequestBody,
-        @Part("name") name: RequestBody?
+        @Part("pengguna") pengguna: RequestBody?
     ) : ResponseGeneral
 
     @Multipart
@@ -109,4 +113,7 @@ interface ApiServices {
     suspend fun getDetailBarang(
         @Query("kode_barang") kodeBarang: String?
     ): ResponseDetailItemBarang
+
+    @GET("webservice/next-id")
+    suspend fun getNextId(): ResponseNextId
 }
