@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".adapter.AdapterBarangKeluar">
 
     <LinearLayout
@@ -15,18 +15,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="#5DF6E8"
-                android:text="Kode Barang Keluar  :"
-                />
+
 
             <TextView
                 android:id="@+id/kodeBarangKeluar"
                 android:layout_width="match_parent"
+                android:text="Kode Barang"
                 android:layout_height="wrap_content"
-                android:background="#5DF6E8"
+                android:background="#03A9F4"
 
                 android:padding="10dp" />
         </LinearLayout>
@@ -34,92 +30,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
 
-                android:text="Pengguna :"
-                />
 
             <TextView
-                android:id="@+id/pengguna"
+                android:id="@+id/namaBarang"
+                android:text="Nama Barang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/kodeBarangKeluar"
                 android:padding="10dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
 
-                android:text="Kode Barang :"
-                />
 
             <TextView
-                android:id="@+id/kodeBarang"
+                android:id="@+id/jenisBarang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:text="Jenis Barang" />
         </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
 
-                    android:text="Jumlah :"
-                    />
 
                 <TextView
-                    android:id="@+id/jumlah"
+                    android:id="@+id/statusPinjam"
                     android:layout_width="match_parent"
+                    android:text="Status Pinjam"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/kodeBarang"
                     android:padding="10dp" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-
-                    android:text="Tanggal Keluar :"
-                    />
-
-                <TextView
-                    android:id="@+id/tglKeluar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/jumlah"
-                    android:padding="10dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-
-                    android:text="Keterangan :"
-                    />
-
-                <TextView
-                    android:id="@+id/keterangan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tglKeluar"
-                    android:padding="10dp" />
             </LinearLayout>
 
 

@@ -32,7 +32,7 @@ interface ApiServices {
     suspend fun getListBarangKeluar() : ResponseListBarangKeluar
 
     @GET("webservice/lihatbarangkeluarbyuser")
-    suspend fun getListBarangKeluarByUser() : ResponseLihatBarangKeluarByUser
+    suspend fun getListBarangKeluarByUser(@Query ("pengguna")pengguna :String?) : ResponseLihatBarangKeluarByUser
 
     @GET("webservice/lihatjenisbarang")
     suspend fun getListJenisBarang(
@@ -66,7 +66,8 @@ interface ApiServices {
         @Part("kode_barang") kodeBarang: RequestBody?,
         @Part("tanggal_keluar") tanggalKeluar: RequestBody?,
         @Part("jumlah") jumlah: RequestBody,
-        @Part("keterangan") keterangan: RequestBody,
+        @Part("keterangan_pinjam") keterangan: RequestBody,
+        @Part("alasan_pinjam") alasanPinjem: RequestBody,
         @Part("pengguna") pengguna: RequestBody?
     ) : ResponseGeneral
 

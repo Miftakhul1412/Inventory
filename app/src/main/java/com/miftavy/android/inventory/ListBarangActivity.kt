@@ -88,9 +88,14 @@ class ListBarangActivity: AppCompatActivity(){
 //                }
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-            var jenis= listJenis.get(position)
-            filterIdJenisBarang= jenis?.idJenisBarang.toString()
-            makeRequest()
+            if (position == 0){
+                filterIdJenisBarang = ""
+                makeRequest()
+            }else {
+                var jenis = listJenis.get(position-1)
+                filterIdJenisBarang = jenis?.idJenisBarang.toString()
+                makeRequest()
+            }
        }
     }
 
@@ -176,9 +181,10 @@ class ListBarangActivity: AppCompatActivity(){
     }
     fun addJenisBarang(dataJenis: List<DataJenisItem?>?) {
         val jenis = mutableListOf<String?>()
+        jenis.add(0, "semua")
         dataJenis?.let { listJenis.addAll(it) }
-        dataJenis?.forEach {
-            jenis.add(it?.jenisBarang)
+        dataJenis?.forEachIndexed { index, dataJenisItem ->
+            jenis.add(index+1, dataJenisItem?.jenisBarang)
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, jenis)
 
@@ -199,6 +205,4 @@ class ListBarangActivity: AppCompatActivity(){
     }
 }
 
-private fun Spinner.setText(kodeBarang: String) {
 
-}

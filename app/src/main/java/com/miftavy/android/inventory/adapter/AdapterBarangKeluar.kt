@@ -25,13 +25,11 @@ class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEA
     inner class  ViewHolder(private  val binding: ItemAdapterBarangKeluarBinding) :
         RecyclerView.ViewHolder(binding.root){
 
-        fun bindItem(barangkeluar: DataBarangKeluarItem?){
+        fun bindItem(barangkeluar: DataBarangKeluarByUserItem?){
             binding.kodeBarangKeluar.text = barangkeluar?.kodeBarangKeluar.toString()
-            binding.pengguna.text = barangkeluar?.pengguna
-            binding.tglKeluar.text = barangkeluar?.tanggalKeluar
-            binding.jumlah.text = barangkeluar?.jumlah.toString()
-            binding.keterangan.text = barangkeluar?.keterangan
-            binding.kodeBarang.text = barangkeluar?.kodeBarang
+            binding.namaBarang.text=barangkeluar?.namaBarang
+            binding.statusPinjam.text=barangkeluar?.statusPinjam
+            binding.jenisBarang.text=barangkeluar?.jenisBarang
 
 
 
@@ -68,9 +66,9 @@ class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEA
     }
 
     //mutablelist adalah array
-    private var listBarangkeluar = mutableListOf<DataBarangKeluarItem?>()
+    private var listBarangkeluar = mutableListOf<DataBarangKeluarByUserItem?>()
 
-    fun  addItem(list: List<DataBarangKeluarItem?>, clearAll: Boolean = false){
+    fun  addItem(list: List<DataBarangKeluarByUserItem?>, clearAll: Boolean = false){
         if (clearAll)
             listBarangkeluar = mutableListOf()
 

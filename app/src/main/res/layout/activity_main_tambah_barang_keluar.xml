@@ -91,20 +91,35 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Pengguna"
-                android:padding="10dp"/>
+                android:enabled="false"
+                android:hint="Pengguna"
+                android:padding="10dp">
 
-            <Spinner
-                android:id="@+id/dropdownPengguna"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pengguna"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:padding="10dp"/>
+                android:hint="Alasan Pinjam"
+                android:padding="10dp">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/alasan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
@@ -118,6 +133,8 @@
                     android:layout_height="match_parent"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
             <Button

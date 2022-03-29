@@ -10,6 +10,8 @@ import com.miftavy.android.inventory.adapter.AdapterBarang.Companion.LINEARTYPE
 import com.miftavy.android.inventory.adapter.AdapterBarangKeluar
 import com.miftavy.android.inventory.databinding.ActivityListBarangKeluarBinding
 import com.miftavy.android.inventory.network.Network
+import com.miftavy.android.inventory.utils.Constant
+import com.pixplicity.easyprefs.library.Prefs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -49,10 +51,10 @@ class ListBarangKeluarActivity : AppCompatActivity(){
     fun makeRequest() {
         CoroutineScope(Dispatchers.IO).launch {
             try{
-                val response = Network().getService().getListBarangKeluar()
+                val response = Network().getService().getListBarangKeluarByUser(Prefs.getString(Constant.EMAIL))
                 //update data ke UI
                 MainScope().launch {
-                    response.dataBarangKeluar?.let { adapterBarangKeluar.addItem(it, true)
+                    response.dataBarangKeluarByUser?.let { adapterBarangKeluar.addItem(it, true)
                     }
                 }
             }catch (e: Throwable){
