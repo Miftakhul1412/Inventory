@@ -26,7 +26,7 @@ class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEA
         RecyclerView.ViewHolder(binding.root){
 
         fun bindItem(barangkeluar: DataBarangKeluarByUserItem?){
-            binding.kodeBarangKeluar.text = barangkeluar?.kodeBarangKeluar.toString()
+            //binding.kodeBarangKeluar.text = barangkeluar?.kodeBarangKeluar.toString()
             binding.namaBarang.text=barangkeluar?.namaBarang
             binding.statusPinjam.text=barangkeluar?.statusPinjam
             binding.jenisBarang.text=barangkeluar?.jenisBarang
@@ -38,15 +38,15 @@ class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEA
 
 
 
-            //inti klik untuk masing-masing baris ke recyclerview nya
-            binding.root.setOnClickListener{
-                clickItem(barangkeluar)
-            }
+//            //inti klik untuk masing-masing baris ke recyclerview nya
+//            binding.root.setOnClickListener{
+//                clickItem(barangkeluar)
+//            }
         }
 
-        private fun clickItem(barangkeluar: DataBarangKeluarItem?) {
-
-        }
+//        private fun clickItem(barangkeluar: DataBarangKeluarItem?) {
+//
+//        }
     }
 
 

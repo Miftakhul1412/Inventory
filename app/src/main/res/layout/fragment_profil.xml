@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtlevel"
             android:hint="level"
-
+            android:textSize="12sp"
             android:textColor="@color/white" />
 
 

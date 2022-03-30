@@ -1,12 +1,24 @@
 package com.miftavy.android.inventory.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.miftavy.android.inventory.DetailBarangKeluarActivity
 import com.miftavy.android.inventory.R
+import com.miftavy.android.inventory.adapter.AdapterBarang
+import com.miftavy.android.inventory.adapter.AdapterBarangKeluar
 import com.miftavy.android.inventory.databinding.FragmentHomeBinding
+import com.miftavy.android.inventory.network.Network
+import com.miftavy.android.inventory.utils.Constant
+import com.pixplicity.easyprefs.library.Prefs
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import java.lang.reflect.Array.set
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +34,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 //    private lateinit var adapterPengumuman: AdapterPengumuman
 //    lateinit var adapterpeng : AdapterPengumumanAll
 private lateinit var binding: FragmentHomeBinding
+private lateinit var adapterBarangKeluar: AdapterBarangKeluar
 //
     //ini dipanggil ketika layout itu sudah tampil
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,44 +42,47 @@ private lateinit var binding: FragmentHomeBinding
 
         binding = FragmentHomeBinding.bind(view)
 
+    //initialize adapter barang
+    adapterBarangKeluar = AdapterBarangKeluar(AdapterBarang.LINEARTYPE) {
+        val showDialogDetailBarangKeluar = DetailBarangKeluarActivity.newInstance(it)
+        showDialogDetailBarangKeluar.show(showDialogDetailBarangKeluar, "detail")
+    }
+
+    binding.rvListBarangKeluarByUser.apply {
+        adapter = adapterBarangKeluar
+        layoutManager = LinearLayoutManager(activity)
+    }
+
+    makeRequest()
+
+    }
 
 
-//        val listPengumuman = mutableListOf<PengumumanItem>()
-//        val pengumumanItem1 = PengumumanItem()
-//        pengumumanItem1.gambar = R.drawable.ic_home
-//        pengumumanItem1.judul = "Contoh Judul Pengumuman"
-//        pengumumanItem1.lampiran = "Contoh Lampiran Pengumuman"
-//
-//        listPengumuman.add(pengumumanItem1)
-//
-//        val pengumumanItem2 = PengumumanItem()
-//        pengumumanItem2.gambar = R.drawable.ic_home
-//        pengumumanItem2.judul = "Pengumuman 2"
-//        pengumumanItem2.lampiran = "Contoh Pengumuman 2"
-//
-//        listPengumuman.add(pengumumanItem2)
-//
-//        adapterPengumuman = AdapterPengumuman(onItemClick = {
-//            Intent(requireActivity(), DetailPengumuman::class.java).apply {
-//                putExtra("item_pengumuman", it)
-//                startActivity(this)
-//            }
-//        })
-//        binding.rvPengumuman.adapter = adapterPengumuman
-//        binding.rvPengumuman.layoutManager = LinearLayoutManager(requireActivity())
-//
-//        adapterPengumuman.addItem(listPengumuman)
 
-//        binding.pkp.setOnClickListener {
-//            Intent(requireActivity(), PkpActivity::class.java).apply {
-//                startActivity(this)
-//            }
-//        }
-//
-//        binding.monitoring.setOnClickListener {
-//            Intent(requireActivity(), MonitoringActivity::class.java).apply {
-//                startActivity(this)
-//            }
-//        }
+    fun makeRequest() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try{
+                val response = Network().getService().getListBarangKeluarByUser(
+                    Prefs.getString(
+                        Constant.EMAIL),5)
+                //update data ke UI
+                MainScope().launch {
+                    response.dataBarangKeluarByUser?.let { adapterBarangKeluar.addItem(it, true)
+                    }
+                }
+            }catch (e: Throwable){
+                e.printStackTrace()
+                Log.d("GAGAL", "asd")
+                MainScope().launch {
+                    Toast.makeText(requireContext(),"UJI", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }
+
+private fun DetailBarangKeluarActivity.show(showDialogDetailBarangKeluar: DetailBarangKeluarActivity, s: String) {
+
+}
+
+

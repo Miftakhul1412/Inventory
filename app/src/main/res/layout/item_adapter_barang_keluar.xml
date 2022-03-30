@@ -1,57 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".adapter.AdapterBarangKeluar">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
+            android:id="@+id/konten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-
-
-            <TextView
-                android:id="@+id/kodeBarangKeluar"
-                android:layout_width="match_parent"
-                android:text="Kode Barang"
-                android:layout_height="wrap_content"
-                android:background="#03A9F4"
-
-                android:padding="10dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:id="@+id/namaBarang"
-                android:text="Nama Barang"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
 
-            <TextView
-                android:id="@+id/jenisBarang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Jenis Barang" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/namaBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Nama Barang"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,16 +39,37 @@
 
 
                 <TextView
-                    android:id="@+id/statusPinjam"
+                    android:id="@+id/jenisBarang"
                     android:layout_width="match_parent"
-                    android:text="Status Pinjam"
                     android:layout_height="wrap_content"
-                    android:padding="10dp" />
-
+                    android:padding="10dp"
+                    android:text="Jenis Barang"
+                    android:textSize="12sp" />
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/konten"
+            android:gravity="right">
 
 
+            <TextView
+                android:id="@+id/statusPinjam"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#009688"
+                android:padding="10dp"
+                android:text="Status Pinjam"
+                android:textColor="@color/white"
+                android:textColorLink="#009688"
+                android:textSize="10sp" />
 
         </LinearLayout>
+
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
