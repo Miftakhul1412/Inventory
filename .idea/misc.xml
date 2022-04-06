@@ -84,6 +84,7 @@
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/drawable/ic_screen_foreground.xml" value="0.1255" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/drawable/ic_tambah_brg.xml" value="0.1535" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_detail_barang.xml" value="0.19814814814814816" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_detail_barang_keluar.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_list_barang.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_list_jenis.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_list_stok.xml" value="0.20416666666666666" />
@@ -94,6 +95,7 @@
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_menu.xml" value="0.22" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_barang.xml" value="0.25" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_barang_keluar.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_jenis_barang.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_tambah_stok.xml" value="0.25" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/layout/activity_main_update_barang.xml" value="0.20416666666666666" />
@@ -120,6 +122,13 @@
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/mipmap-anydpi-v26/ic_orang_round.xml" value="0.2075" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/mipmap-anydpi-v26/ic_screen.xml" value="0.1" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory/app/src/main/res/mipmap-anydpi-v26/ic_screen_round.xml" value="0.1255" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_detail_barang.xml" value="0.25" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_detail_barang_keluar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_list_barang.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_list_barang_keluar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_main_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_result_scan_qr.xml" value="0.1685185185185185" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_scan.xml" value="0.1685185185185185" />
       </map>
     </option>
   </component>

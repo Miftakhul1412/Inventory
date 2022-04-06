@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.miftavy.android.inventory.user.MainMenuUserActivity
 import com.pixplicity.easyprefs.library.Prefs
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
         handler.postDelayed({
             //menampilkan setelah splash ke mainmenuactivity
             if(Prefs.contains("email")){
-                Intent(this@SplashScreenActivity, MainMenuActivity::class.java).apply {
+                Intent(this@SplashScreenActivity, MainMenuUserActivity::class.java).apply {
                     startActivity(this)
                     finish()
                 }
