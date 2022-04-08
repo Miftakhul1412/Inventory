@@ -30,9 +30,10 @@ class AdapterBarangKeluar(private val viewTypes: Int = AdapterBarangKeluar.LINEA
             binding.namaBarang.text=barangkeluar?.namaBarang
             binding.statusPinjam.text=barangkeluar?.statusPinjam
             binding.jenisBarang.text=barangkeluar?.jenisBarang
-//            Glide.with(binding.root.context)
-//                .load("${Network().BASE_URL}${barangkeluar?.gambar}")
-//                .into(binding.gambar)
+            Glide.with(binding.root.context)
+                .load("${Network().BASE_URL}${barangkeluar?.gambar}")
+                .into(binding.gambar)
+            binding.tanggalkeluar.text=barangkeluar?.tanggalKeluar
 //            //inti klik untuk masing-masing baris ke recyclerview nya
 //            binding.root.setOnClickListener{
 //                clickItem(barangkeluar)

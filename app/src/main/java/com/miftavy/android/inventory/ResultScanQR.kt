@@ -53,6 +53,8 @@ class ResultScanQR : AppCompatActivity() {
         binding.satuan.text = detailBarang.detail?.satuan
         binding.kodeJenisBarang.text = detailBarang.detail?.jenisBarang
         binding.tanggalMasuk.text = detailBarang.detail?.tanggalMasuk
+        binding.pengguna.text = detailBarang.detail?.pengguna
+
 
         Glide.with(binding.root.context)
             .load("${Network().BASE_URL}${detailBarang.detail?.gambar}")
