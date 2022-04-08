@@ -30,5 +30,8 @@ data class ResponseDetailBarang(
 	val merk: String? = null,
 
 	@field:SerializedName("jenis_barang")
-	val jenisBarang: String? = null
+	val jenisBarang: String? = null,
+
+	@field:SerializedName("spesifikasi")
+	val spesifikasi: String? = null,
 )

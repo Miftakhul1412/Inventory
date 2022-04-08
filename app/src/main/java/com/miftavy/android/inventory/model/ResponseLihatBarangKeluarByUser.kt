@@ -49,5 +49,8 @@ data class DataBarangKeluarByUserItem(
 	val tanggalKeluar: String? = null,
 
 	@field:SerializedName("nama_barang")
-	val namaBarang: String? = null
+	val namaBarang: String? = null,
+
+	@field:SerializedName("gambar")
+	val gambar: String? = null
 ) : Parcelable

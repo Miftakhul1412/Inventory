@@ -76,6 +76,7 @@ class DetailBarangActivity : BottomSheetDialogFragment() {
         view.findViewById<TextView>(R.id.satuan)?.text = barangItem?.satuan
         view.findViewById<TextView>(R.id.merek)?.text = barangItem?.merek
         view.findViewById<TextView>(R.id.kondisi)?.text = barangItem?.kondisi
+        view.findViewById<TextView>(R.id.spesifikasi)?.text = barangItem?.spesifikasi
 
 
 

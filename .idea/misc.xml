@@ -129,6 +129,9 @@
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_main_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_result_scan_qr.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/activity_scan.xml" value="0.1685185185185185" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/fragment_history_barang.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/item_adapter_barang.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Win/AndroidStudioProjects/Inventory22/app/src/main/res/layout/item_adapter_barang_keluar.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

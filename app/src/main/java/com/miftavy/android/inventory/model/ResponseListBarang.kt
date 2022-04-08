@@ -50,6 +50,9 @@ data class DataBarangItem(
     val jumlahBeli: String? = null,
 
     @field:SerializedName("nama_supplier")
-    val namaSupplier: String? = null
+    val namaSupplier: String? = null,
+
+    @field:SerializedName("spesifikasi")
+    val spesifikasi: String? = null,
 
 ) : Parcelable
